@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <title>La tua collezione</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body class="w-full mx-auto font-[Cairo] leading-[1.2]">
+
+    <div class="hero-section mx-auto w-full  grid content-between bg-[url(https://ciakit.com/themes/velocity/assets/images/banner-home.webp)] bg-cover bg-center">
+        <div class="hero-wrap  grid content-between h-[390px] m-auto">
+            <div class="nothing"></div>
+            <div class="user-details text-center md:text-left lg:w-[1300px] md:w-full w-full text-white mx-auto pb-20 mt-12 sm:px-8">
+                <h2 class="text-3xl mb-2 ">Demo User name</h2>
+                <span class="">demo user email</span>
+            </div>
+
+            <div class="profile-navigation bg-[rgba(0,0,0,0.7)]">
+                <ul class="flex flex-row justify-center gap-4 sm:gap-16 font-bold text-center py-6">
+                    <li class="uppercase text-lg cursor-pointer text-white">
+                        <a href="profile.html">Profile</a>
+                    </li>
+                    <li class="uppercase text-lg cursor-pointer  underline text-[#f2d14e]">
+                        <a href="releases.html">La tua collezione</a>
+                    </li>
+                    <li class="uppercase text-lg text-white cursor-pointer hover:underline hover:text-[#f2d14e]">
+                        <a href="favorites.html">Preferiti</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap lg:w-[1300px] w-full mx-auto pt-0 sm:pt-10 pb-20 px-6">
+        <div class="login-box">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb flex flex-row gap-2 my-4 whitespace-normal">
+                    <li class="breadcrumb-item ">
+                        <a href="profile.html">Profilo</a>
+                    </li> /
+                    <li aria-current="page" class="breadcrumb-item whitespace-nowrap break-words">
+                        <a href="releases.html">La tua collezione</a>
+                    </li> /
+                    <li aria-current="page" class="breadcrumb-item text-gray-400 whitespace-nowrap break-words">Aggiungi una versione</li>
+                </ol>
+            </nav>
+
+            <div class="login-heading flex flex-row justify-between items-center mb-2 sm:mb-7">
+                <h1 class="text-2xl sm:text-3xl font-bold mt-2">Aggiungi una versione</h1>
+            </div>
+
+            <div class="step_1 pt-2 item-to-hide">
+                <h2 class="text-2xl font-bold uppercase text-gray-800 mb-4">Selezionare Tipo</h2>
+            
+                <form id="cerca_release" method="post" action="https://ciakit.com/customer/account/releases/create" enctype="multipart/form-data" class="space-y-4">
+                    <input type="hidden" name="_token" value="LJXipitRQ1T1rBDEO1o6khc4kFgJobMwI449eBSd">
+            
+                    <!-- Tipo Selection -->
+                    <div class="tipo-container flex gap-4 text-center">
+                        <input type="radio" id="tipo-video" name="tipo" value="video" class="hidden">
+                        <label for="tipo-video" class="uppercase bg-[#efc622] hover:bg-[#f2d14e] text-black flex items-center justify-center px-6 py-3 rounded-md cursor-pointer">
+                            Video
+                        </label>
+            
+                        <input type="radio" id="tipo-poster" name="tipo" value="poster" class="hidden">
+                        <label for="tipo-poster" class="uppercase bg-[#efc622] hover:bg-[#f2d14e] text-black flex items-center justify-center px-6 py-3 rounded-md cursor-pointer ">
+                            Poster
+                        </label>
+                    </div>
+            
+                    <!-- Dynamic Fields -->
+                    <div class="campo-cerca-container">
+                        <div id="cerca-video" class="cerca video hidden mb-4 flex justify-center ">
+                            <label class="text-gray-700 text-[16px] font-medium text-center">
+                                Numero Catalogo
+                                <input id="numero_catalogo" type="text" name="numero_catalogo" class="border border-gray-300  px-3 py-2 w-full  mt-1">
+                            </label>
+                        </div>
+            
+                        <div id="cerca-poster" class="cerca poster hidden mb-4  justify-center ">
+                            <label class="text-gray-700 text-[16px] font-medium text-center ">
+                                Titolo Edizione
+                                <input id="original_title" type="text" name="original_title" class="border border-gray-300 px-3 py-2 w-full focus:ring mt-1">
+                            </label>
+                        </div>
+                    </div>
+            
+                    <!-- Submit Button -->
+                    <div id="button-group" class="hidden flex justify-center">
+                        <input type="submit" value="Cerca" class="w-[340px] bg-yellow-500 text-white font-bold uppercase px-6 py-3 rounded-md cursor-pointer hover:bg-yellow-600">
+                    </div>
+                </form>
+            </div>
+        </div> 
+
+
+        <!-- Crea Nuovo Button -->
+         <!-- Crea Nuovo Button -->
+          <!-- Crea Nuovo Button -->
+
+        <div class="wrap w-full mx-auto pt-0 sm:pt-10 pb-20 ">
+            <!-- Crea Nuovo Button -->
+            <button type="button" id="crea-nuovo" class="w-[150px] item-to-hide cursor-pointer hover:bg-[#f2d14e] font-bold uppercase rounded-[8px] text- py-[12px] px-[20px] bg-[#efc622]">
+                Crea Nuovo
+            </button>
+    
+            <!-- Hidden Form -->
+            <form method="POST" action="" enctype="multipart/form-data" class="flex flex-col content-center m-auto" id="form-nuovo" style="display: none;">
+                <!-- Film di riferimento -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="film" class="mandatory mb-[5px]">Film di riferimento</label>
+                    <select name="film" id="film" class="border-[#dcdcdc] border-1 bg-white text-[rgba(0,0,0,0.83)] py-[5px] px-[12px]" required>
+                        <option value="" disabled selected>Seleziona un film</option>
+                        <option value="film1">Film 1</option>
+                        <option value="film2">Film 2</option>
+                        <option value="film3">Film 3</option>
+                    </select>
+                </div>
+                
+                <!-- Titolo edizione -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="titolo-edizione" class="mandatory mb-[5px]">Titolo Edizione</label>
+                    <input type="text" name="titolo-edizione" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]" required>
+                </div>
+                
+                <!-- Altri eventuali titoli -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="altri-titoli" class="mb-[5px]">Altri eventuali titoli</label>
+                    <input type="text" name="altri-titoli" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]">
+                </div>
+                
+                <!-- Anno di edizione -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="anno-edizione" class="mandatory mb-[5px]">Anno di Edizione</label>
+                    <input type="number" name="anno-edizione" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]" required>
+                </div>
+                
+                <!-- Paese di edizione -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="paese-edizione" class="mandatory mb-[5px]">Paese di Edizione</label>
+                    <select name="paese-edizione" id="paese-edizione" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]" required>
+                        <option value="" disabled selected>Seleziona un paese</option>
+                        <option value="italia">Italia</option>
+                        <option value="usa">USA</option>
+                        <option value="francia">Francia</option>
+                    </select>
+                </div>
+                
+                <!-- Casa di distribuzione -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="casa-distribuzione" class="mandatory mb-[5px]">Casa di Distribuzione</label>
+                    <input type="text" name="casa-distribuzione" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]" required>
+                </div>
+                
+                <!-- Lingua -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="lingua" class="mandatory mb-[5px]">Lingua</label>
+                    <select name="lingua[]" id="lingua" multiple class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]" required>
+                        <option value="italiano">Italiano</option>
+                        <option value="inglese">Inglese</option>
+                        <option value="francese">Francese</option>
+                        <option value="spagnolo">Spagnolo</option>
+                        <option value="tedesco">Tedesco</option>
+                    </select>
+                </div>
+                
+                <!-- Tipo di poster -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="tipo-poster" class="mandatory mb-[5px]">Tipo di Poster</label>
+                    <select name="tipo-poster" id="tipo-poster" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]" required>
+                        <option value="">Seleziona il tipo</option>
+                        <option value="teatrale">Teatrale</option>
+                        <option value="teaser">Teaser</option>
+                        <option value="alternativo">Alternativo</option>
+                    </select>
+                </div>
+                
+                <!-- Formato -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="formato" class="mandatory mb-[5px]">Formato</label>
+                    <select name="formato" id="formato" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]" required>
+                        <option value="">Seleziona il formato</option>
+                        <option value="orizzontale">Orizzontale</option>
+                        <option value="verticale">Verticale</option>
+                    </select>
+                </div>
+                
+                <!-- Misure -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="misure" class="mandatory mb-[5px]">Misure</label>
+                    <select name="misure" id="misure" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]" required>
+                        <option value="">Seleziona le misure</option>
+                        <option value="70x100">70x100 cm</option>
+                        <option value="100x140">100x140 cm</option>
+                        <option value="120x160">120x160 cm</option>
+                    </select>
+                </div>
+                
+                <!-- Illustratore -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="illustratore" class="mb-[5px]">Illustratore</label>
+                    <input type="text" name="illustratore" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]">
+                </div>
+                
+                <!-- Stampatore -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="stampatore" class="mb-[5px]">Stampatore</label>
+                    <input type="text" name="stampatore" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]">
+                </div>
+                
+                <!-- Submit Button -->
+                <input type="submit" value="SALVA VERSIONE" class="w-[150px] cursor-pointer hover:bg-[#f2d14e] font-bold uppercase rounded-[8px] text- py-[12px] px-[20px] bg-[#efc622]">
+            </form>
+        </div>
+    </div> 
+
+    
+
+
+
+
+
+
+    <script>
+        document.querySelectorAll('input[name="tipo"]').forEach((radio) => {
+            radio.addEventListener("change", function () {
+                document.getElementById("cerca-video").style.display = this.value === "video" ? "flex" : "none";
+                document.getElementById("cerca-poster").style.display = this.value === "poster" ? "flex" : "none";
+                document.getElementById("button-group").style.display = "flex";
+            });
+        });
+    </script>
+
+    
+    <script>
+        document.getElementById('crea-nuovo').addEventListener('click', function() {
+    // Get all elements with the class 'item-to-hide'
+    var items = document.querySelectorAll('.item-to-hide');
+
+    // Loop through each item and toggle its visibility
+    items.forEach(function(item) {
+        item.style.display = (item.style.display === 'none' || item.style.display === '') ? 'none' : 'block';
+        });
+    });
+
+    </script>
+
+    <!-- JavaScript to toggle form visibility -->
+    <script>
+        document.getElementById('crea-nuovo').addEventListener('click', function() {
+            var form = document.getElementById('form-nuovo');
+            form.style.display = (form.style.display === 'none' || form.style.display === '') ? 'block' : 'none';
+        });
+    </script>
+</body>
+</html>

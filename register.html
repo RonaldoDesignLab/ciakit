@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <title>Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body class="w-full font-[Cairo] leading-[1.2]">
+    <div class="wrap m-auto w-full lg:w-[67%] sm:w-[75%] md:w-[99%] pt-[40px] px-[5%] sm:px-[8.333%]">
+        
+        <div class="login-box">
+            <div class="login-heading flex justify-between items-center mb-[20px]">
+                <h1 class="text-[20px] sm:text-[24px] leading-[4rem] font-bold"> Registrazione Utente</h1>
+                <a href="login.html">
+                    <button class="cursor-pointer hover:bg-[#f2d14e] font-bold uppercase rounded-[8px] text- py-[12px] px-[20px] bg-[#efc622]">
+                        login
+                    </button>
+                </a>            </div>
+            <div class="form-box bg-gray-100 shadow-lg border-1 py-[35px] px-[30px] sm:px-[55px] mb-[60px] border-[#ccc]">
+                <div class="form-header mb-[20px]">
+                    <h3 class="font-bold leading-[1.4rem]">Diventa Utente</h3>
+                    <p> Se sei nuovo nel nostro store, siamo lieti di averti come nuovo amico.</p>
+                </div>
+
+                <form method="POST" action="" class="flex flex-col content-center m-auto">
+                    <div class="form-group flex flex-col mb-[20px]">
+                        <label for="nome" class="mandatory mb-[5px]">Nome</label> 
+                        <input type="text" name="nome" value="" class="border-[#dcdcdc] border-1 bg-white text-[rgba(0,0,0,0.83)] py-[2px] px-[12px]" required>
+                    </div>
+                    
+                    <div class="form-group flex flex-col mb-[20px]">
+                        <label for="cognome" class="mandatory mb-[5px]">Cognome</label> 
+                        <input type="text" name="cognome" value="" class="border-[#dcdcdc] border-1 bg-white text-[rgba(0,0,0,0.83)] py-[2px] px-[12px]" required>
+                    </div>
+
+                    <div class="form-group flex flex-col mb-[36px]">
+                        <label for="dob" class="mandatory mb-[5px]">Data di Nascita</label>
+                        <input type="text" name="dob" id="dob" class="border-[#dcdcdc] border-1 bg-white text-[rgba(0,0,0,0.83)] py-[2px] px-[12px] w-full" required>
+                    </div>                                        
+                    
+                    <div class="form-group flex flex-col mb-[20px]">
+                        <label for="email" class="mandatory mb-[5px]">Email</label> 
+                        <input type="text" name="email" value="" class="border-[#dcdcdc] border-1 bg-white text-[rgba(0,0,0,0.83)] py-[2px] px-[12px]" required>
+                    </div>                    
+
+                    <div class="form-group flex flex-col mb-[20px]">
+                        <label for="password" class="mandatory mb-[5px]">Password</label> 
+                        <input type="password" name="password" id="password" value="" class="border-[#dcdcdc] border-1 bg-white text-[rgba(0,0,0,0.83)] py-[2px] px-[12px]" required> 
+                    </div>
+                    
+                    <div class="form-group flex flex-col mb-[40px]">
+                        <label for="confirm-password" class="mandatory mb-[5px]">Conferma Password</label> 
+                        <input type="password" name="confirm-password" id="confirm-password" value="" class="border-[#dcdcdc] border-1 bg-white text-[rgba(0,0,0,0.83)] py-[2px] px-[12px]" required>
+                    </div>         
+
+                    <div class="form-group flex flex-col mb-[20px]">
+                        <label for="privacy_checkbox" class="font-medium text-gray-700 mb-[5px]"> 
+                            Privacy Policy                             
+                            <input type="checkbox" id="privacy_checkbox" name="privacy_checkbox" required="required" class="border-[#dcdcdc] border-1 bg-white text-[rgba(0,0,0,0.83)] py-[2px] px-[12px] mr-[10px]">
+                        </label>
+                        <div class="flex items-center">
+                            <p class="text-gray-500">
+                                Devi leggere ed accettare la nostra privacy policy prima di registrarti. <a href="/page/privacy-policy/" class="font-bold underline">privacy policy</a>                            </p>
+                        </div>
+                    </div>
+                    
+
+                    <!--submit-button--->
+                    <input type="submit" value="Login" class="w-[85px] cursor-pointer hover:bg-[#f2d14e] font-bold uppercase rounded-[8px] text- py-[12px] px-[20px] bg-[#efc622]">
+                
+                </form>
+            </div>
+        </div> 
+    </div> 
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        flatpickr("#dob", {
+            dateFormat: "d-m-Y",  // Format of the selected date
+            enableTime: false,    // Disable time selection (just date)
+            theme: "light",       // Use a light theme for a cleaner design
+            defaultDate: "today", // Set default date to today's date
+            locale: {
+                firstDayOfWeek: 1 // Set Monday as the first day of the week
+            },
+            allowInput: true, // Allow typing in the input field
+            onOpen: function(selectedDates, dateStr, instance) {
+                const calendar = instance.calendarContainer;
+                calendar.style.backgroundColor = "white"; // White background for the calendar
+            }
+        });
+    </script>
+       
+</body>
+</html>

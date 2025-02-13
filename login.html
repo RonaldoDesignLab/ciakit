@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body class="w-full font-[Cairo] leading-[1.2]">
+
+
+    <div class="wrap m-auto w-full lg:w-[67%] sm:w-[75%] md:w-[99%] pt-[40px] px-[5%] sm:px-[8.333%]">
+        
+        <div class="login-box">
+            <div class="login-heading flex justify-between items-center mb-[20px]">
+                <h1 class="text-[20px] sm:text-[24px] leading-[4rem] font-bold">Login Cliente</h1>
+                <a href="register.html">
+                    <button class="cursor-pointer hover:bg-[#f2d14e] font-bold uppercase rounded-[8px] text- py-[12px] px-[20px] bg-[#efc622]">
+                        register
+                    </button>
+                </a>
+            </div>
+            <div class="form-box bg-gray-100 shadow-lg border-1 py-[35px] px-[30px] sm:px-[55px] mb-[60px] border-[#ccc]">
+                <div class="form-header mb-[20px]">
+                    <h3 class="font-bold leading-[1.4rem]">Utente Registrato</h3>
+                    <p>Se hai un account, effettua login con la tua email.</p>
+                </div>
+
+                <form method="POST" action="" class="flex flex-col content-center m-auto">
+                    <div class="form-group flex flex-col mb-[36px]">
+                        <label for="email" class="mandatory mb-[5px]">Email</label> 
+                        <input type="text" name="email" value="" class="border-[#dcdcdc] border-1 bg-white text-[rgba(0,0,0,0.83)] py-[2px] px-[12px]" required>
+                    </div>
+
+                    <div class="form-group flex flex-col mb-[10px]">
+                        <label for="password" class="mandatory mb-[5px]">Password</label> 
+                        <input type="password" name="password" id="password" value="" class="border-[#dcdcdc] border-1 bg-white text-[rgba(0,0,0,0.83)] py-[2px] px-[12px]" required> 
+                    </div>
+                    <div class="form-group flex flex-row justify-between mb-[80px]">
+                        <span><input type="checkbox" onclick="myFunction()" id="shoPassword" class="show-password"> mostra password </span> 
+                        <a href="#" class="show-password float-right hover:text-[#0056b3] hover:underline">Dimenticato Password? </a> 
+                    </div>
+                    
+                    <input type="submit" value="Login" class="w-[85px] cursor-pointer hover:bg-[#f2d14e] font-bold uppercase rounded-[8px] text- py-[12px] px-[20px] bg-[#efc622]">
+                
+                </form>
+            </div>
+        </div> 
+    </div> 
+</body>
+</html>

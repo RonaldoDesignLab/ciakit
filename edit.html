@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <title>Modifica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body class="w-full mx-auto font-[Cairo] leading-[1.2]">
+
+    <div class="hero-section mx-auto w-full  grid content-between bg-[url(https://ciakit.com/themes/velocity/assets/images/banner-home.webp)] bg-cover bg-center">
+            <div class="hero-wrap  grid content-between h-[390px] m-auto">
+                <div class="nothing"></div>
+                <div class="user-details text-center md:text-left lg:w-[1300px] md:w-full w-full text-white mx-auto pb-20 mt-12 sm:px-8">
+                    <h2 class="text-3xl mb-2">Demo User name</h2>
+                    <span>demo user email</span>
+                </div>
+
+            <div class="profile-navigation bg-[rgba(0,0,0,0.7)]">
+                <ul class="flex flex-row justify-center gap-4 sm:gap-16 font-bold text-center py-6">
+                    <li class="uppercase text-lg cursor-pointer underline text-[#f2d14e]">
+                        <a href="profile.html">Profile</a>
+                    </li>
+                    <li class="uppercase text-lg text-white cursor-pointer hover:underline hover:text-[#f2d14e]">
+                        <a href="releases.html">La tua collezione</a>
+                    </li>
+                    <li class="uppercase text-lg text-white cursor-pointer hover:underline hover:text-[#f2d14e]">
+                        <a href="favorites.html">Preferiti</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap sm:w-[1300px] w-full mx-auto pt-0 sm:pt-10 pb-20 px-6">
+        <div class="login-box">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb flex flex-row gap-2 my-4">
+                    <li class="breadcrumb-item">
+                        <a href="profile.html">Profilo</a>
+                    </li> /
+                    <li aria-current="page" class="breadcrumb-item active">Aggiorna</li>
+                </ol>
+            </nav>
+
+            <div class="login-heading flex flex-row justify-between items-center mb-2 sm:mb-7">
+                <h1 class="text-2xl sm:text-3xl font-bold mt-2">Profilo</h1>
+            </div>
+            <div class="form-box">
+                <form method="POST" action="" enctype="multipart/form-data" class="flex flex-col content-center m-auto">
+                    <div class="form-group flex flex-col mb-[30px]">
+                        <label for="nome" class="mandatory mb-[5px]">Nome</label> 
+                        <input type="text" name="nome" class="border-[#dcdcdc] border-1 bg-white text-[rgba(0,0,0,0.83)] py-[5px] px-[12px]" required>
+                    </div>
+                
+                    <div class="form-group flex flex-col mb-[30px]">
+                        <label for="cognome" class="mandatory mb-[5px]">Cognome</label> 
+                        <input type="text" name="cognome" class="border-[#dcdcdc] border-1 bg-white text-[rgba(0,0,0,0.83)] py-[5px] px-[12px]" required>
+                    </div>
+
+                    <div class="form-group flex flex-col mb-[30px]">
+                        <label for="sesso" class="mandatory mb-[5px]">Selezione Genere</label>
+                        <select name="sesso" id="sesso" class="border-[#dcdcdc] border-1 bg-white text-[rgba(0,0,0,0.83)] py-[5px] px-[12px]" required>
+                            <option value="" disabled selected>Seleziona il genere</option>
+                            <option value="altro">Altro</option>
+                            <option value="maschio">Maschio</option>
+                            <option value="femmina">Femmina</option>
+                        </select>
+                    </div>                    
+                
+                    <div class="form-group flex flex-col mb-[30px]">
+                        <label for="dob" class="mandatory mb-[5px]">Data di Nascita</label>
+                        <input type="text" name="dob" id="dob" class="border-[#dcdcdc] border-1 bg-white text-[rgba(0,0,0,0.83)] py-[5px] px-[12px]" required>
+                    </div> 
+
+                    <div class="form-group flex flex-col mb-[30px]">
+                        <label for="email" class="mandatory mb-[5px]">Email</label> 
+                        <input type="email" name="email" class="border-[#dcdcdc] border-1 bg-white text-[rgba(0,0,0,0.83)] py-[5px] px-[12px]" required>
+                    </div>                    
+                
+                    <!-- Telefono -->
+                    <div class="form-group flex flex-col mb-[30px]">
+                        <label for="telefono" class="mandatory mb-[5px]">Telefono</label> 
+                        <input type="tel" name="telefono" class="border-[#dcdcdc] border-1 bg-white text-[rgba(0,0,0,0.83)] py-[5px] px-[12px]" required>
+                    </div>                    
+                
+                    <!-- Immagine Upload -->
+                    <div class="form-group items-start flex flex-col mb-[30px]">
+                        <label for="immagine" class="mandatory mb-[5px]">Immagine</label>
+                        
+                        <div class="image-wrapper flex flex-col items-center">
+                            <!-- Image Preview (Default Placeholder) -->
+                            <img id="image-preview" src="https://via.placeholder.com/100" alt="Profile Picture" class="w-[140px] h-[130px] object-cover border border-[#dcdcdc] rounded-md mb-2">
+                            
+                            <!-- Hidden Input for Image Storage -->
+                            <input type="hidden" name="image[image_1]">
+                            
+                            <!-- File Upload Input -->
+                            <label for="profile-image" class="image-item cursor-pointer bg-gray-200 px-4 py-2 rounded-md hover:bg-gray-300">
+                                Scegli Immagine
+                                <input type="file" accept="image/*" name="image[image_1]" id="profile-image" class="hidden" onchange="previewImage(event)">
+                            </label>
+                            
+                            <!-- Remove Image Button -->
+                            <button type="button" class="remove-image text-red-500 mt-2 text-sm" onclick="removeImage()">Rimuovi Immagine</button>
+                        </div>
+                    </div>                    
+                
+                    <!-- Password Attuale -->
+                    <div class="form-group flex flex-col mb-[30px]">
+                        <label for="current-password" class="mandatory mb-[5px]">Inserisci password attuale</label> 
+                        <input type="password" name="current-password" id="current-password" class="border-[#dcdcdc] border-1 bg-white text-[rgba(0,0,0,0.83)] py-[5px] px-[12px]" required> 
+                    </div>
+                
+                    <div class="form-group flex flex-col mb-[30px]">
+                        <label for="password" class="mandatory mb-[5px]">Nuova Password</label> 
+                        <input type="password" name="password" id="password" class="border-[#dcdcdc] border-1 bg-white text-[rgba(0,0,0,0.83)] py-[5px] px-[12px]" required> 
+                    </div>
+                
+                    <div class="form-group flex flex-col mb-[40px]">
+                        <label for="confirm-password" class="mandatory mb-[5px]">Conferma nuova Password</label> 
+                        <input type="password" name="confirm-password" id="confirm-password" class="border-[#dcdcdc] border-1 bg-white text-[rgba(0,0,0,0.83)] py-[5px] px-[12px]" required>
+                    </div>
+                
+                    <!-- Submit Button -->
+                    <input type="submit" value="AGGIORNA" class="w-[120px] cursor-pointer hover:bg-[#f2d14e] font-bold uppercase rounded-[8px] text- py-[12px] px-[20px] bg-[#efc622]">
+                </form>
+            </div>
+        </div> 
+    </div> 
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        flatpickr("#dob", {
+            dateFormat: "d-m-Y",  // Format of the selected date
+            enableTime: false,    // Disable time selection (just date)
+            theme: "light",       // Use a light theme for a cleaner design
+            defaultDate: "today", // Set default date to today's date
+            locale: {
+                firstDayOfWeek: 1 // Set Monday as the first day of the week
+            },
+            allowInput: true, // Allow typing in the input field
+            onOpen: function(selectedDates, dateStr, instance) {
+                const calendar = instance.calendarContainer;
+                calendar.style.backgroundColor = "white"; // White background for the calendar
+            }
+        });
+    </script>
+    <script>
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                document.getElementById('image-preview').src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    
+        function removeImage() {
+            document.getElementById('image-preview').src = "https://via.placeholder.com/100"; // Reset to placeholder
+            document.getElementById('profile-image').value = ""; // Clear input
+        }
+    </script>
+</body>
+</html>

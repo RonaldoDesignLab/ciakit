@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <title>La tua collezione</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body class="w-full mx-auto font-[Cairo] leading-[1.2]">
+
+    <div class="hero-section mx-auto w-full  grid content-between bg-[url(https://ciakit.com/themes/velocity/assets/images/banner-home.webp)] bg-cover bg-center">
+        <div class="hero-wrap  grid content-between h-[390px] m-auto">
+            <div class="nothing"></div>
+            <div class="user-details text-center md:text-left lg:w-[1300px] md:w-full w-full text-white mx-auto pb-20 mt-12 sm:px-8">
+                <h2 class="text-3xl mb-2 ">Demo User name</h2>
+                <span class="">demo user email</span>
+            </div>
+
+            <div class="profile-navigation bg-[rgba(0,0,0,0.7)]">
+                <ul class="flex flex-row justify-center gap-4 sm:gap-16 font-bold text-center py-6">
+                    <li class="uppercase text-lg cursor-pointer text-white">
+                        <a href="profile.html">Profile</a>
+                    </li>
+                    <li class="uppercase text-lg cursor-pointer  underline text-[#f2d14e]">
+                        <a href="releases.html">La tua collezione</a>
+                    </li>
+                    <li class="uppercase text-lg text-white cursor-pointer hover:underline hover:text-[#f2d14e]">
+                        <a href="favorites.html">Preferiti</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap lg:w-[1300px] w-full m-auto lg:pt-10  px-6">
+        <div class="login-box">
+            <div class="login-heading flex flex-row justify-between items-center mb-2 sm:mb-2">
+                <h1 class="text-2xl lg:pt-0 pt-6 sm:text-3xl font-bold mt-2">Aggiungi film</h1>
+            </div>
+        </div> 
+
+
+          <!-- Crea Nuovo Button -->
+
+        <div class="wrap w-full pb-20 sm:pt-2 ">
+            <!-- Hidden Form -->
+            <form method="POST" action="" enctype="multipart/form-data" class="flex flex-col content-center m-auto" id="form-nuovo">
+                <!-- Titolo Originale -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="titolo-originale" class="mandatory mb-[5px]">TITOLO ORIGINALE</label>
+                    <input type="text" name="titolo-originale" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]" required>
+                </div>
+            
+                <!-- Altri Titoli -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="altri-titoli" class="mb-[5px]">ALTRI TITOLI</label>
+                    <input type="text" name="altri-titoli" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]">
+                </div>
+            
+                <!-- Generi (Multi-selection) -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="generi" class="mandatory mb-[5px]">GENERI</label>
+                    <select name="generi[]" id="generi" multiple class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]" required>
+                        <option value="azione">Azione</option>
+                        <option value="dramma">Dramma</option>
+                        <option value="commedia">Commedia</option>
+                        <option value="thriller">Thriller</option>
+                    </select>
+                </div>
+            
+                <!-- Sottogeneri (Multi-selection) -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="sottogeneri" class="mandatory mb-[5px]">SOTTOGENERI</label>
+                    <select name="sottogeneri[]" id="sottogeneri" multiple class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]" required>
+                        <option value="horror">Horror</option>
+                        <option value="giallo">Giallo</option>
+                        <option value="fantascienza">Fantascienza</option>
+                    </select>
+                </div>
+            
+                <!-- Vietato ai minori di 18 anni -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="vietato-minori" class="mb-[5px]">VIETATO AI MINORI DI 18 ANNI</label>
+                    <input type="checkbox" name="vietato-minori" id="vietato-minori" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]">
+                </div>
+            
+                <!-- Bianco/Nero -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="bianco-nero" class="mb-[5px]">BIANCO/NERo</label>
+                    <input type="checkbox" name="bianco-nero" id="bianco-nero" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]">
+                </div>
+            
+                <!-- Paese (Multi-selection) -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="paese" class="mandatory mb-[5px]">PAESE</label>
+                    <select name="paese[]" id="paese" multiple class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]" required>
+                        <option value="italia">Italia</option>
+                        <option value="usa">USA</option>
+                        <option value="francia">Francia</option>
+                        <option value="spagna">Spagna</option>
+                    </select>
+                </div>
+            
+                <!-- Anno -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="anno" class="mandatory mb-[5px]">ANNO</label>
+                    <input type="number" name="anno" id="anno" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]" required>
+                </div>
+            
+                <!-- Regista -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="regista" class="mandatory mb-[5px]">REGISTA</label>
+                    <input type="text" name="regista" id="regista" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]" required>
+                </div>
+            
+                <!-- Attori -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="attori" class="mandatory mb-[5px]">ATTORI</label>
+                    <input type="text" name="attori" id="attori" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]" required>
+                </div>
+            
+                <!-- Sceneggiatori -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="sceneggiatori" class="mandatory mb-[5px]">SCENEGGIATORI</label>
+                    <input type="text" name="sceneggiatori" id="sceneggiatori" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]" required>
+                </div>
+            
+                <!-- Musiche di -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="musiche-di" class="mb-[5px]">MUSICHE DI</label>
+                    <input type="text" name="musiche-di" id="musiche-di" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]">
+                </div>
+            
+                <!-- Casa di Produzione -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="casa-produzione" class="mandatory mb-[5px]">CASA DI PRODUZIONE</label>
+                    <input type="text" name="casa-produzione" id="casa-produzione" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]" required>
+                </div>
+            
+                <!-- Lingua -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="lingua" class="mandatory mb-[5px]">LINGUA</label>
+                    <select name="lingua" id="lingua" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]" required>
+                        <option value="italiano">Italiano</option>
+                        <option value="inglese">Inglese</option>
+                        <option value="francese">Francese</option>
+                        <option value="spagnolo">Spagnolo</option>
+                    </select>
+                </div>
+            
+                <!-- Immagini (File Upload) -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="immagini" class="mandatory mb-[5px]">IMMAGINI</label>
+                    <input type="file" name="immagini[]" id="immagini" multiple accept="image/*" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]" required>
+                    <small class="text-gray-500">Dimensione massima del file: 3MB, numero massimo di file: 3</small>
+                </div>
+            
+                <!-- Tipo -->
+                <div class="form-group flex flex-col mb-[30px]">
+                    <label for="tipo" class="mandatory mb-[5px]">TIPO</label>
+                    <select name="tipo" id="tipo" class="border-[#dcdcdc] border-1 bg-white py-[5px] px-[12px]" required>
+                        <option value="teatrale">Teatrale</option>
+                        <option value="teaser">Teaser</option>
+                        <option value="alternativo">Alternativo</option>
+                    </select>
+                </div>
+            
+                <!-- Submit Button -->
+                <input type="submit" value="SALVA VERSIONE" class="w-[150px] cursor-pointer hover:bg-[#f2d14e] font-bold uppercase rounded-[8px] py-[12px] px-[20px] bg-[#efc622]">
+            </form>
+            
+        </div>
+    </div> 
+
+</body>
+</html>

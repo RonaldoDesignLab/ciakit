@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <title>La tua collezione</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        body {
+            margin: auto;
+            padding: 0;
+        }
+    </style>
+</head>
+<body class="w-full mx-auto font-[Cairo] leading-[1.2]">
+
+    <div class="hero-section mx-auto w-full  grid content-between bg-[url(https://ciakit.com/themes/velocity/assets/images/banner-home.webp)] bg-cover bg-center">
+        <div class="hero-wrap  grid content-between h-[390px] m-auto">
+            <div class="nothing"></div>
+            <div class="user-details text-center md:text-left lg:w-[1300px] md:w-full w-full text-white mx-auto pb-20 mt-12 sm:px-8">
+                <h2 class="text-3xl mb-2">Demo User name</h2>
+                <span>demo user email</span>
+            </div>
+    
+            <!-- Profile Navigation (Aligned to the Bottom Inside the Section) -->
+            <div class="profile-navigation bg-[rgba(0,0,0,0.7)] w-full">
+                <ul class="flex flex-row justify-center gap-4 sm:gap-16 font-bold text-center py-6">
+                    <li class="uppercase text-lg cursor-pointer text-white">
+                        <a href="profile.html">Profile</a>
+                    </li>
+                    <li class="uppercase text-lg cursor-pointer hover:underline text-white hover:text-[#f2d14e]">
+                        <a href="releases.html">La tua collezione</a>
+                    </li>
+                    <li class="uppercase text-lg  cursor-pointer underline text-[#f2d14e]">
+                        <a href="favorites.html">Preferiti</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="wrap lg:w-[1300px] w-full mx-auto pt-10 sm:pt-10 pb-20 px-6">
+        <div class="login-box">
+            <div class="login-heading w-full flex flex-col lg:flex-row justify-between lg:items-center mb-2  sm:mb-7">
+                <h1 class="text-2xl sm:text-3xl font-bold mt-2 mb-2"> I tuoi preferiti </h1>
+                <a href="create.html">
+                    <button class="cursor-pointer hover:bg-[#f2d14e] font-bold uppercase rounded-[8px] text- py-[12px] px-[20px] bg-[#efc622]">
+                        Aggiungi una versione
+                    </button>
+                </a> 
+            </div>
+            <div class="container-box mt-3">
+                <div class="section-collezione mt-4">
+                    <div class="table-container overflow-x-auto max-w-full">
+                        <div class="table-responsive">
+                          <table id="releases" class="min-w-full table-auto border border-gray-300">
+                            <thead class="bg-gray-100">
+                              <tr class="border-b border-gray-300">
+                                <th class="px-4 py-2 border-r border-gray-300">Titolo originale</th>
+                                <th class="px-4 py-2 border-r border-gray-300">Anno di edizione</th>
+                                <th class="px-4 py-2 border-r border-gray-300">Casa di distribuzione</th>
+                                <th class="px-4 py-2 border-r border-gray-300">Paese di distribuzione</th>
+                                <th class="px-4 py-2 border-r border-gray-300">Tipo</th>
+                                <th class="px-4 py-2 border-r border-gray-300">Lingua</th>
+                                <th class="px-4 py-2 border-r border-gray-300">Creato il</th>
+                                <th class="px-4 py-2 border-r border-gray-300">Stato</th>
+                                <th class="px-2 py-2">Azione</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr id="74" class="border-b border-gray-300">
+                                <td class="px-4 py-2 border-r border-gray-300">
+                                  <a href="/releases/74/diario-di-un-maestro" class="card-link">
+                                    <img src="https://ciakit.com/cache/large/release/74/M1CpyqQmPk6gjMUQ59nfgHEoYSWg2ZuApVeu6eyD.jpg" alt="" class="aspect-square h-28 w-28"> 
+                                    <div class="font-bold text-[1.125rem] text-[#efc622]">Diario di un maestro</div>
+                                  </a>
+                                </td>
+                                <td class="px-4 py-2 border-r border-gray-300">1974</td>
+                                <td class="px-4 py-2 border-r border-gray-300">Latere Film</td>
+                                <td class="px-4 py-2 border-r border-gray-300">Italy</td>
+                                <td class="px-4 py-2 border-r border-gray-300">Poster</td>
+                                <td class="px-4 py-2 border-r border-gray-300">Italiano</td>
+                                <td class="px-4 py-2 border-r border-gray-300">30-05-2024 21:54</td>
+                                <td class="px-4 py-2 border-r border-gray-300">Pubblicato</td>
+                                <td class="px-2 py-2 text-center">
+                                  <span onclick="if(confirm('Sei sicuro di voler rimuovere questo elemento dalla collezione?')) { 
+                                      addToCollection(this, 74, 'collection', 'release'); 
+                                      document.getElementById('74').remove(); 
+                                    } 
+                                    return false;" class="removeFromCollection cursor-pointer text-red-500">x</span>
+                                </td>
+                              </tr>
+                              <!-- Additional rows go here -->
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      
+                </div>
+
+                <p class="pt-4">Non hai elementi nella tua collezione.</p>
+            </div>
+        </div> 
+    </div> 
+
+    
+</body>
+</html>

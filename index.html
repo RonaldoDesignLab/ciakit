@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <title>Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body class="w-full mx-auto font-[Cairo] leading-[1.2]">
+
+
+    <div class="wrap lg:w-[1300px] w-full mx-auto pt-10 sm:pt-10 pb-20 px-6">
+
+        <h1 class="text-[20px] sm:text-[24px] leading-[4rem] font-bold lg:mb-6">Ultimi articoli dal blog:</h1>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <!-- Left item (1 item) -->
+            <div class="col-span-1 shadow-lg mb-6 md:mb-0">
+                <a href="http://">
+                    <div class="article-wrapper  flex justify-center bg-gradient-to-t from-black to-white relative  ">
+                        <div class="article w-full relative justify-center flex">
+                            <!-- Image -->
+                            <img class=" lg:h-[634px]" src="https://ciakit.com/blog/wp-content/uploads/2023/04/cinecomics.jpg" alt="main-banner">
+                            
+                            <!-- Gradient Overlay (background) -->
+                            <div class="absolute inset-0 bg-gradient-to-t  from-black to-transparent z-10"></div>
+                            
+                            <!-- Content -->
+                            <div class="content absolute p-[2rem] bottom-0 left-0 z-20">
+                                <h3 class="text-[#efc622] text-2xl font-bold">Movie name</h3>
+                                <p class="text-white mt-2">
+                                    Non c’è dubbio, oggi i cosiddetti Cinecomics hanno invaso e saturato, nel bene e nel male, il mercato cinematografico e televisivo mondiale; l’eterna sfida fra DC Comics e Marvel, su questo versante decisamente vinta da quest’ultima, si è trasferita dalla carta stampata agli schermi e, in questi ultimissimi anni, allo streaming. E’ sufficiente dare uno
+                                </p>
+                                <a href="#" class="leggi-tutto">
+                                    <p class="text-[#efc622] underline mt-2">Leggi tutto</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+            </div>
+        
+           <!-- Right items (2 items stacked vertically) -->
+            <div class="col-span-1 grid grid-rows-2 gap-4">
+                <!-- Top right item -->
+                <div class="second-article">
+                    <a href="http://" class="block">
+                        <div class="flex md:flex-row flex-col md:h-[50] mb-6 md:mb-0 w-fit">
+                            <img class="lg:w-[225px] md:h-[300px] md:w-[250px] w-full lg:h-full object-cover" src="https://ciakit.com/blog/wp-content/uploads/2023/04/cinecomics.jpg" alt="main-banner">
+                            <div class="content md:p-[2rem] mt-2 md:mt-2">
+                                <h3 class="text-[#efc622] text-2xl font-bold">Movie name</h3>
+                                <p class="text-black mt-2">
+                                    Non c’è dubbio, oggi i cosiddetti Cinecomics hanno invaso e saturato, nel bene e nel male, il mercato cinematografico e televisivo mondiale; l’eterna sfida fra DC Comics e Marvel, su questo versante decisamente vinta da quest’ultima, si è trasferita dalla carta stampata agli schermi e, in questi ultimissimi anni, allo streaming. E’ sufficiente dare uno
+                                </p>
+                                <p class="text-[#efc622] underline mt-2">Leggi tutto</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Bottom right item -->
+                <div class="second-article">
+                    <a href="http://" class="block">
+                        <div class="flex md:flex-row flex-col md:h-[50] mb-6 md:mb-0 w-fit">
+                            <img class="lg:w-[225px] md:h-[300px] md:w-[250px] w-full lg:h-full object-cover" src="https://ciakit.com/blog/wp-content/uploads/2023/04/cinecomics.jpg" alt="main-banner">
+                            <div class="content md:p-[2rem] mt-2 md:mt-2">
+                                <h3 class="text-[#efc622] text-2xl font-bold">Movie name</h3>
+                                <p class="text-black mt-2">
+                                    Non c’è dubbio, oggi i cosiddetti Cinecomics hanno invaso e saturato, nel bene e nel male, il mercato cinematografico e televisivo mondiale; l’eterna sfida fra DC Comics e Marvel, su questo versante decisamente vinta da quest’ultima, si è trasferita dalla carta stampata agli schermi e, in questi ultimissimi anni, allo streaming. E’ sufficiente dare uno
+                                </p>
+                                <p class="text-[#efc622] underline mt-2">Leggi tutto</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div> 
+    </div> <!-- Closing tag for div.wrap -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.getElementById("mobile-menu-toggle");
+    const menuDropdown = document.getElementById("mobile-dropdown-menu");
+    const userButton = document.querySelector("[x-data] button");
+    const userDropdown = document.querySelector("[x-data] div[x-show]");
+
+    function closeAllDropdowns(except = null) {
+        if (menuDropdown !== except) menuDropdown.classList.add("hidden");
+        if (userDropdown !== except) userDropdown.style.display = "none";
+    }
+
+    menuButton.addEventListener("click", function () {
+        const isHidden = menuDropdown.classList.contains("hidden");
+        closeAllDropdowns(isHidden ? menuDropdown : null);
+        menuDropdown.classList.toggle("hidden");
+    });
+
+    userButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+        const isHidden = userDropdown.style.display === "none" || !userDropdown.style.display;
+        closeAllDropdowns(isHidden ? userDropdown : null);
+        userDropdown.style.display = isHidden ? "block" : "none";
+    });
+
+    document.addEventListener("click", function (event) {
+        if (!menuDropdown.contains(event.target) && !menuButton.contains(event.target)) {
+            menuDropdown.classList.add("hidden");
+        }
+        if (!userDropdown.contains(event.target) && !userButton.contains(event.target)) {
+            userDropdown.style.display = "none";
+        }
+    });
+});
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</body>
+</html>
