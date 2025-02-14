@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <title>Ciakit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .shadow{
+            box-shadow: 1px 3px 40px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="w-full mx-auto font-[Cairo] leading-[1.2]">
+
+    
+ <!-- Masters-->  <!-- Masters--> <!-- Masters--> <!-- Masters--> <!-- Masters--> <!-- Masters-->
+    <div class="wrap lg:w-[1300px] w-full mx-auto lg:pt-10 sm:pt-10 pb-0 px-6">
+        <div class="flex md:flex-row flex-col-reverse gap-8">
+            <div class="flex flex-col gap-6 filter md:w-1/3 lg:w-1/4">
+                <h3 class="text-[#efc622] text-2xl font-bold lg:mb-6 md:mb-1">Esplora tutto </h3>
+                <form id="sidebar_filter" method="GET">
+                <input type="hidden" name="_token" value="kg145KUzoFE1HqFqn0kvTAexBinVQ6ht6qWbPwCd">
+                
+                <!-- Search by Title or Label -->
+                <div class="mb-8 p-4 rounded-md shadow">
+                    <h3 class="mb-4 font-bold">Cerca per titolo o etichetta</h3>
+                    <input type="text" name="term" id="term" placeholder="Cerca per titolo o etichetta" class="w-full border-[#efc622] border-2 border-themeColor-500 rounded-xl py-2 px-2 text-sm">
+                </div>
+                
+                <!-- Search by Catalog -->
+                <div class="mb-8 p-4 rounded-md shadow">
+                    <h3 class="mb-4 font-bold">Cerca per #catalogo</h3>
+                    <input type="text" name="catalogo" id="catalogo" placeholder="Cerca per #catalogo" class="w-full border-[#efc622] border-2 border-themeColor-500 rounded-xl py-2 px-2 text-sm">
+                </div>
+                
+                <input type="hidden" id="order_by" name="order_by" value="">
+                
+                <!-- Genres -->
+                <div class="mb-8 p-4 rounded-md shadow">
+                    <h3 class="mb-4 font-bold">Generi</h3>
+                    <div class="flex flex-col gap-2">
+                    <label class="flex items-center"><input type="checkbox" value="3" name="generi[]" class="mr-2">Animazione</label>
+                    <label class="flex items-center"><input type="checkbox" value="4" name="generi[]" class="mr-2">Avventura</label>
+                    <label class="flex items-center"><input type="checkbox" value="5" name="generi[]" class="mr-2">Azione</label>
+                    <label class="flex items-center"><input type="checkbox" value="8" name="generi[]" class="mr-2">Comico</label>
+                    <label class="flex items-center"><input type="checkbox" value="9" name="generi[]" class="mr-2">Commedia</label>
+                    <label class="flex items-center"><input type="checkbox" value="11" name="generi[]" class="mr-2">Documentario</label>
+                    <label class="flex items-center"><input type="checkbox" value="12" name="generi[]" class="mr-2">Drammatico</label>
+                    </div>
+                </div>
+                
+                <!-- Type -->
+                <div class="mb-8 p-4 rounded-md shadow">
+                    <h3 class="mb-4 font-bold">Tipo</h3>
+                    <select name="master_type" id="master_type" class="w-full bg-[#efc622] rounded-xl py-2 px-2 text-sm">
+                    <option value="">Nessun tipo selezionato</option>
+                    <option value="movie" selected>Movie</option>
+                    <option value="movie-episode">Movie Episode</option>
+                    <option value="serie">Serie TV</option>
+                    <option value="poster">Poster</option>
+                    </select>
+                </div>
+                
+                <!-- Year -->
+                <div class="mb-8 p-4 rounded-md shadow">
+                    <h3 class="mb-4 font-bold">Anno</h3>
+                    <select name="year" id="year" class="w-full bg-[#efc622] rounded-xl py-2 px-2 text-sm">
+                    <option value="">Nessun anno selezionato</option>
+                    <option value="2025">2025</option>
+                    <option value="1895">1895</option>
+                    </select>
+                </div>
+                
+                <!-- Country -->
+                <div class="mb-8 p-4 rounded-md shadow">
+                    <h3 class="mb-4 font-bold">Paese</h3>
+                    <select name="country" id="country" class="w-full bg-[#efc622] rounded-xl py-2 px-2 text-sm">
+                    <option value="">Nessuna paese selezionato</option>
+                    <option value="AF">Afghanistan</option>
+                    <option value="ZW">Zimbabwe</option>
+                    </select>
+                </div>
+                
+                <!-- Language -->
+                <div class="mb-8 p-4 rounded-md shadow">
+                    <h3 class="mb-4 font-bold">Lingue</h3>
+                    <select name="language" id="language" class="w-full bg-[#efc622] rounded-xl py-2 px-2 text-sm">
+                    <option value="">Nessuna lingua selezionata</option>
+                    <option value="AF">Afrikaans</option>
+                    <option value="SQ">Albanese</option>
+                    </select>
+                </div>
+                
+                <input type="hidden" id="per_page" name="per_page" value="15">
+                
+                <!-- Clear Filters -->
+                <a href="/masters" class="block text-center p-4 rounded-md shadow bg-[#efc622] text-white font-semibold">Rimuovi filtri</a>
+                
+                <input type="submit" style="visibility: hidden;">
+                </form>
+            </div>
+
+            <div class="list md:w-2/3 lg:w-3/4 md:mt-16 mt-6">
+                    <div class="sort-container mb-8 lg:mb-10 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-8 md:-mt-16 md:mb-5 md:px-4">
+                        <div class="results-counter w-32">1-15 di 1061</div>
+                        
+                        <div class="order flex items-center gap-2 sm:gap-8">
+                        <!-- Sorting Dropdown -->
+                        <div class="flex items-center gap-2 sm:gap-4">
+                            <h3 class="font-bold">Ordina</h3>
+                            <div class="relative">
+                            <select 
+                                name="show_order_by" 
+                                id="show_order_by" 
+                                onchange="document.getElementById('order_by').value = this.value" 
+                                class="border-themeColor-500 w-full appearance-none rounded-xl border-2 border-[#efc622] bg-white py-2 px-2 text-sm">
+                            <option value="most_recent">dal più recente al meno recente</option>
+                            <option value="alpha_asc">in ordine alfabetico crescente (a-z)</option>
+                            <option value="alpha_desc">in ordine alfabetico descrescente (z-a)</option>
+                          </select>
+                          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="w-4 h-4 bg-white fill-current">
+                              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Items Per Page Dropdown -->
+                      <div class="flex items-center gap-2 sm:gap-4">
+                        <h3 class="font-bold">Mostra</h3>
+                        <div class="relative">
+                          <select 
+                            name="show_per_page" 
+                            id="show_per_page" 
+                            onchange="document.getElementById('per_page').value = this.value" 
+                            class="border-themeColor-500 w-16 appearance-none border-[#efc622] rounded-xl border-2 bg-white py-2 px-2 text-sm">
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="50">50</option>
+                          </select>
+                          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="h-4 w-4 bg-white fill-current">
+                              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                <div class="flex flex-row flex-wrap justify-between">
+                    <div class="item w-full sm:w-1/2 lg:w-1/3 lg:mb-0 mb-5">
+                        <a href="http://">
+                            <div class="w-full  flex flex-col items-center justify-center">
+                                <img class="h-[280px]" src="https://ciakit.com/cache/medium/master/962/Nh86wQEju67abJP2qfsDa9AG4cb6RrW4g7myIK85.jpg" alt="banner-image">
+                                <div class="item-content w-full flex flex-col justify-center pt-4">
+                                    <h3 class="text-[#efc622] text-[18px] hover:underline text-center uppercase font-bold">Il segno del comando</h3>
+                                    <div class="w-full flex flex-col justify-center mt-4 text-black">
+                                        <div class="top w-full flex row justify-center text-sm border-b border-gray-300">
+                                            <p class="border-r border-gray-300 p-2">Fantastico</p>
+                                            <p class="border-r border-gray-300 p-2">1971</p>
+                                            <p class=" p-2">IT</p>
+                                        </div>
+                                        <div class="bottom w-full flex row justify-center">
+                                            <p class="p-2 text-sm">
+                                                <a href="http://">
+                                                    Fantastico
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item w-full sm:w-1/2 lg:w-1/3">
+                        <a href="http://">
+                            <div class="w-full  flex flex-col items-center justify-center">
+                                <img class="h-[280px]" src="https://ciakit.com/cache/medium/master/962/Nh86wQEju67abJP2qfsDa9AG4cb6RrW4g7myIK85.jpg" alt="banner-image">
+                                <div class="item-content w-full flex flex-col justify-center pt-4">
+                                    <h3 class="text-[#efc622] text-[18px] hover:underline text-center uppercase font-bold">Il segno del comando</h3>
+                                    <div class="w-full flex flex-col justify-center mt-4 text-black">
+                                        <div class="top w-full flex row justify-center text-sm border-b border-gray-300">
+                                            <p class="border-r border-gray-300 p-2">Fantastico</p>
+                                            <p class="border-r border-gray-300 p-2">1971</p>
+                                            <p class=" p-2">IT</p>
+                                        </div>
+                                        <div class="bottom w-full flex row justify-center">
+                                            <p class="p-2 text-sm">
+                                                <a href="http://">
+                                                    Fantastico
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item w-full sm:w-1/2 lg:w-1/3">
+                        <a href="http://">
+                            <div class="w-full  flex flex-col items-center justify-center">
+                                <img class="h-[280px]" src="https://ciakit.com/cache/medium/master/962/Nh86wQEju67abJP2qfsDa9AG4cb6RrW4g7myIK85.jpg" alt="banner-image">
+                                <div class="item-content w-full flex flex-col justify-center pt-4">
+                                    <h3 class="text-[#efc622] text-[18px] hover:underline text-center uppercase font-bold">Il segno del comando</h3>
+                                    <div class="w-full flex flex-col justify-center mt-4 text-black">
+                                        <div class="top w-full flex row justify-center text-sm border-b border-gray-300">
+                                            <p class="border-r border-gray-300 p-2">Fantastico</p>
+                                            <p class="border-r border-gray-300 p-2">1971</p>
+                                            <p class=" p-2">IT</p>
+                                        </div>
+                                        <div class="bottom w-full flex row justify-center">
+                                            <p class="p-2 text-sm">
+                                                <a href="http://">
+                                                    Fantastico
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+          
+
+    </div>
+    
+
+    <!-- Slider white first -->
+    <div class="slider-serie-tV white ">
+        <div class="serie-tv-wrap lg:w-[1300px] w-full mx-auto pt-0 sm:pt-0 px-6">
+            <h3 class="text-[#efc622] text-2xl font-bold">Altri film simili</h3>
+            <div class="container mx-auto px-4 pt-8 pb-16 text-center">
+                <div class="carousel">
+                    
+                    <div class="p-4">
+                        <a href="http://">
+                            <div class="w-full  flex flex-col items-center justify-center">
+                                <img class="h-[280px]" src="https://ciakit.com/cache/medium/master/962/Nh86wQEju67abJP2qfsDa9AG4cb6RrW4g7myIK85.jpg" alt="banner-image">
+                                <div class="item-content w-full flex flex-col justify-center pt-4">
+                                    <h3 class="text-[#efc622] text-[18px] hover:underline text-center uppercase font-bold">Il segno del comando</h3>
+                                    <div class="w-full flex flex-col justify-center mt-4 text-black">
+                                        <div class="top w-full flex row justify-center text-sm border-b border-gray-300">
+                                            <p class="border-r border-gray-300 p-2">Fantastico</p>
+                                            <p class="border-r border-gray-300 p-2">1971</p>
+                                            <p class=" p-2">IT</p>
+                                        </div>
+                                        <div class="bottom w-full flex row justify-center">
+                                            <p class="p-2 text-sm">
+                                                <a href="http://">
+                                                    Fantastico
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="p-4">
+                        <a href="http://">
+                            <div class="w-full  flex flex-col items-center justify-center">
+                                <img class="h-[280px]" src="https://ciakit.com/cache/medium/master/962/Nh86wQEju67abJP2qfsDa9AG4cb6RrW4g7myIK85.jpg" alt="banner-image">
+                                <div class="item-content w-full flex flex-col justify-center pt-4">
+                                    <h3 class="text-[#efc622] text-[18px] hover:underline text-center uppercase font-bold">Il segno del comando</h3>
+                                    <div class="w-full flex flex-col justify-center mt-4 text-black">
+                                        <div class="top w-full flex row justify-center text-sm border-b border-gray-300">
+                                            <p class="border-r border-gray-300 p-2">Fantastico</p>
+                                            <p class="border-r border-gray-300 p-2">1971</p>
+                                            <p class=" p-2">IT</p>
+                                        </div>
+                                        <div class="bottom w-full flex row justify-center">
+                                            <p class="p-2 text-sm">
+                                                <a href="http://">
+                                                    Fantastico
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="p-4">
+                        <a href="http://">
+                            <div class="w-full  flex flex-col items-center justify-center">
+                                <img class="h-[280px]" src="https://ciakit.com/cache/medium/master/962/Nh86wQEju67abJP2qfsDa9AG4cb6RrW4g7myIK85.jpg" alt="banner-image">
+                                <div class="item-content w-full flex flex-col justify-center pt-4">
+                                    <h3 class="text-[#efc622] text-[18px] hover:underline text-center uppercase font-bold">Il segno del comando</h3>
+                                    <div class="w-full flex flex-col justify-center mt-4 text-black">
+                                        <div class="top w-full flex row justify-center text-sm border-b border-gray-300">
+                                            <p class="border-r border-gray-300 p-2">Fantastico</p>
+                                            <p class="border-r border-gray-300 p-2">1971</p>
+                                            <p class=" p-2">IT</p>
+                                        </div>
+                                        <div class="bottom w-full flex row justify-center">
+                                            <p class="p-2 text-sm">
+                                                <a href="http://">
+                                                    Fantastico
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="p-4">
+                        <a href="http://">
+                            <div class="w-full  flex flex-col items-center justify-center">
+                                <img class="h-[280px]" src="https://ciakit.com/cache/medium/master/962/Nh86wQEju67abJP2qfsDa9AG4cb6RrW4g7myIK85.jpg" alt="banner-image">
+                                <div class="item-content w-full flex flex-col justify-center pt-4">
+                                    <h3 class="text-[#efc622] text-[18px] hover:underline text-center uppercase font-bold">Il segno del comando</h3>
+                                    <div class="w-full flex flex-col justify-center mt-4 text-black">
+                                        <div class="top w-full flex row justify-center text-sm border-b border-gray-300">
+                                            <p class="border-r border-gray-300 p-2">Fantastico</p>
+                                            <p class="border-r border-gray-300 p-2">1971</p>
+                                            <p class=" p-2">IT</p>
+                                        </div>
+                                        <div class="bottom w-full flex row justify-center">
+                                            <p class="p-2 text-sm">
+                                                <a href="http://">
+                                                    Fantastico
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="p-4">
+                        <a href="http://">
+                            <div class="w-full  flex flex-col items-center justify-center">
+                                <img class="h-[280px]" src="https://ciakit.com/cache/medium/master/962/Nh86wQEju67abJP2qfsDa9AG4cb6RrW4g7myIK85.jpg" alt="banner-image">
+                                <div class="item-content w-full flex flex-col justify-center pt-4">
+                                    <h3 class="text-[#efc622] text-[18px] hover:underline text-center uppercase font-bold">Il segno del comando</h3>
+                                    <div class="w-full flex flex-col justify-center mt-4 text-black">
+                                        <div class="top w-full flex row justify-center text-sm border-b border-gray-300">
+                                            <p class="border-r border-gray-300 p-2">Fantastico</p>
+                                            <p class="border-r border-gray-300 p-2">1971</p>
+                                            <p class=" p-2">IT</p>
+                                        </div>
+                                        <div class="bottom w-full flex row justify-center">
+                                            <p class="p-2 text-sm">
+                                                <a href="http://">
+                                                    Fantastico
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="p-4">
+                        <a href="http://">
+                            <div class="w-full  flex flex-col items-center justify-center">
+                                <img class="h-[280px]" src="https://ciakit.com/cache/medium/master/962/Nh86wQEju67abJP2qfsDa9AG4cb6RrW4g7myIK85.jpg" alt="banner-image">
+                                <div class="item-content w-full flex flex-col justify-center pt-4">
+                                    <h3 class="text-[#efc622] text-[18px] hover:underline text-center uppercase font-bold">Il segno del comando</h3>
+                                    <div class="w-full flex flex-col justify-center mt-4 text-black">
+                                        <div class="top w-full flex row justify-center text-sm border-b border-gray-300">
+                                            <p class="border-r border-gray-300 p-2">Fantastico</p>
+                                            <p class="border-r border-gray-300 p-2">1971</p>
+                                            <p class=" p-2">IT</p>
+                                        </div>
+                                        <div class="bottom w-full flex row justify-center">
+                                            <p class="p-2 text-sm">
+                                                <a href="http://">
+                                                    Fantastico
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                </div>
+                <button class="cursor-pointer mt-6 hover:bg-[#f2d14e] font-bold uppercase rounded-full text- py-[8px] px-[20px] bg-[#efc622]">
+                    Visualizza tutti
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+    $('.carousel').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        arrows: true,
+        prevArrow: '<button class="custom-prev absolute left-0 z-10 p-3 cursor-pointer text-black">❮</button>',
+        nextArrow: '<button class="custom-next absolute right-0 z-10 p-3 cursor-pointer text-black">❯</button>',
+        responsive: [
+            { breakpoint: 1024, settings: { slidesToShow: 3 } },
+            { breakpoint: 768, settings: { slidesToShow: 2 } },
+            { breakpoint: 480, settings: { slidesToShow: 1 } }
+        ]
+    });
+
+    // Second Slider (1 Item Per Slide)
+    $('.carousel-single').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                prevArrow: '<button class="single-prev absolute left-0 z-10 p-3">❮</button>',
+                nextArrow: '<button class="single-next absolute right-0 z-10 p-3">❯</button>',
+            });
+});
+
+    </script>
+</body>
+</html>
