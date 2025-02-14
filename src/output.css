@@ -2139,6 +2139,9 @@
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
   }
+  .px-2\.5 {
+    padding-inline: calc(var(--spacing) * 2.5);
+  }
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
   }
@@ -2262,6 +2265,9 @@
   .pt-10 {
     padding-top: calc(var(--spacing) * 10);
   }
+  .pt-\[5px\] {
+    padding-top: 5px;
+  }
   .pt-\[40px\] {
     padding-top: 40px;
   }
@@ -2285,6 +2291,9 @@
   }
   .pb-20 {
     padding-bottom: calc(var(--spacing) * 20);
+  }
+  .pb-\[-5px\] {
+    padding-bottom: -5px;
   }
   .pb-\[4rem\] {
     padding-bottom: 4rem;
@@ -3439,6 +3448,16 @@
   .lg\:mb-10 {
     @media (width >= 64rem) {
       margin-bottom: calc(var(--spacing) * 10);
+    }
+  }
+  .lg\:mb-\[-5px\] {
+    @media (width >= 64rem) {
+      margin-bottom: -5px;
+    }
+  }
+  .lg\:mb-\[19px\] {
+    @media (width >= 64rem) {
+      margin-bottom: 19px;
     }
   }
   .lg\:block {
