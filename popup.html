@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <title>Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .info{
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        button{
+            cursor: pointer;
+        }
+
+        .info:hover{
+            transform: scale(1.02);
+        }
+
+        .content-section {
+            padding-top: 25px;
+        }
+
+        .accordion-title {
+            color: black;
+            background: yellow;
+            padding: 13px 15px;
+            border-radius: 11px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .hidden{
+            max-height: 500px;
+            transition: all 0.5s ease-in-out;
+            overflow: hidden;
+        }
+
+        .acconsento-click-section-title, .informative-title h3 {
+            color: rgb(31, 73, 125);
+        }
+        
+    </style>
+</head>
+<body class="w-full mx-auto font-[Cairo] leading-[1.2]">
+
+
+    <div class="sidebar-privacy">
+
+        <!-- Lock Button -->
+    <button id="lockBtn" class="fixed left-4 bottom-4 bg-[#efc622]  transition-all duration-100 hover:bg-[#efc622e8] cursor-pointer text-white py-3 px-4 rounded-full shadow-lg">
+        <i class="fa fa-solid fa-lock"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="fixed leading-6 left-[30%] top-0 w-[30%] h-screen bg-black text-white shadow-lg transition-all duration-300">
+        <button id="closeBtn" class="absolute top-4 right-4 bg-white text-black py-3 px-4 rounded-full">
+            <i class="fa fa-times"></i>       
+        </button>
+        <div class="main-content-sidebar ">
+            <div class="w-full ">
+                <!-- Tab Buttons -->
+                <div class="flex bg-[#efc622] pt-4 pl-4 pr-4">
+                    <button class="tab-btn px-4 py-2 pt-3 w-[140px] text-center rounded-tr-xl rounded-tl-xl" data-tab="uk">🇬🇧 Enlgish</button>
+                    <button class="tab-btn px-4 py-2 pt-3 w-[140px] text-center rounded-tr-xl rounded-tl-xl" data-tab="it">🇮🇹 Italian</button>
+                </div>
+            
+                <div class="tab-content mt-4 p-6 pt-4 max-h-[calc(100vh-200px)] overflow-y-auto" id="tab-uk">
+                    <div class="title-content">
+                        <h3 class="text-2xl uppercase text-center bg-[#efc622] p-2">Privacy Control Center</h3>
+                        
+                        <!-- Button List -->
+                        <div class="content-list pt-6  flex flex-col gap-4" id="buttons-uk">
+                            <button class="info px-4 py-3 flex flex-row justify-between items-center bg-white text-black rounded-full" data-target="info-uk">Information about this website <i class="fa fa-check p-1 bg-[#efc622] text-white rounded-full"></i></button>
+                            <button class="info px-4 py-3 flex flex-row justify-between items-center bg-white text-black rounded-full" data-target="rights-uk">My own rights<i class="fa fa-check p-1 bg-[#efc622] text-white rounded-full"></i></button>
+                            <button class="info px-4 py-3 flex flex-row justify-between items-center bg-white text-black rounded-full" data-target="id-uk">My privacy ID<i class="fa fa-check p-1 bg-[#efc622] text-white rounded-full"></i></button>
+                            <button class="info px-4 py-3 flex flex-row justify-between items-center bg-[#efc622] text-black rounded-full" data-target="policy-uk">Privacy Policy<i class="fa fa-check p-1 bg-white text-[#efc622] rounded-full"></i></button>
+                            <button class="info px-4 py-3 flex flex-row justify-between items-center bg-[#efc622] text-black rounded-full" data-target="cookie-uk">Cookie management<i class="fa fa-check p-1 bg-white text-[#efc622] rounded-full"></i></button>
+
+                        </div>
+                
+                        <!-- Content Sections (Initially Hidden) -->
+                        <div class="hidden content-section" id="info-uk">
+                            <button class="back-btn text-white" data-target="buttons-uk"><i class="fa fa-arrow-left"></i> Back</button>
+                            <div class="px-6 m-0 text-center information">
+                                <div class="px-10 pt-4 ">
+                                    <span class="text-xl  font-semibold ">Data Controller</span>
+                                    
+                                    <div class="flex items-center my-2 text-left">
+                                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path fill="currentColor" d="M352 128C352 198.7 294.7 256 224 256C153.3 256 96 198.7 96 128C96 57.31 153.3 0 224 0C294.7 0 352 57.31 352 128zM209.1 359.2L176 304H272L238.9 359.2L272.2 483.1L311.7 321.9C388.9 333.9 448 400.7 448 481.3C448 498.2 434.2 512 417.3 512H30.72C13.75 512 0 498.2 0 481.3C0 400.7 59.09 333.9 136.3 321.9L175.8 483.1L209.1 359.2z"></path>
+                                        </svg>
+                                        <span class="pl-3">Ciakit s.r.l.s.</span>
+                                    </div>
+                                    
+                                    <div class="flex items-center my-2 text-left">
+                                        <svg class="acconsento-icon-big-svg w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M408 120C408 174.6 334.9 271.9 302.8 311.1C295.1 321.6 280.9 321.6 273.2 311.1C241.1 271.9 168 174.6 168 120C168 53.73 221.7 0 288 0C354.3 0 408 53.73 408 120zM288 152C310.1 152 328 134.1 328 112C328 89.91 310.1 72 288 72C265.9 72 248 89.91 248 112C248 134.1 265.9 152 288 152zM425.6 179.8C426.1 178.6 426.6 177.4 427.1 176.1L543.1 129.7C558.9 123.4 576 135 576 152V422.8C576 432.6 570 441.4 560.9 445.1L416 503V200.4C419.5 193.5 422.7 186.7 425.6 179.8zM150.4 179.8C153.3 186.7 156.5 193.5 160 200.4V451.8L32.91 502.7C17.15 508.1 0 497.4 0 480.4V209.6C0 199.8 5.975 190.1 15.09 187.3L137.6 138.3C140 152.5 144.9 166.6 150.4 179.8H150.4zM327.8 331.1C341.7 314.6 363.5 286.3 384 255V504.3L192 449.4V255C212.5 286.3 234.3 314.6 248.2 331.1C268.7 357.6 307.3 357.6 327.8 331.1L327.8 331.1z"></path></svg>
+                                        <span class="pl-3">VIA CAVOUR 35/A ESTE 35042 PD</span>
+                                    </div>
+                                    
+                                    <div class="flex items-center my-2 text-left">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="acconsento-icon-big-svg w-6 h-6"><path fill="currentColor" d="m 582.67052,388.23225 -23.25,100.8 c -3.266,14.25 -15.79,24.22 -30.46,24.22 -252.29,-0.02 -457.490003,-205.22 -457.490003,-457.52 0,-14.66 9.969,-27.2 24.22,-30.45 L 196.49052,2.0322503 c 14.68,-3.402 29.68,4.218 35.78,18.1199997 l 46.52,108.5 c 5.438,12.78 1.77,27.67 -8.98,36.45 l -53.84,43.23 c 33.98,69.22 90.26,125.5 159.5,159.5 l 44.08,-53.8 c 8.688,-10.78 23.69,-14.51 36.47,-8.975 l 108.5,46.51 c 13.05,6.865 21.55,22.065 18.15,36.665 z" id="path2"></path></svg>
+                                        <span class="pl-3">3888788567</span>
+                                    </div>
+                                    
+                                    <div class="flex items-center my-2 text-left">
+                                        <svg class="acconsento-icon-big-svg w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 352c-16.53 0-33.06-5.422-47.16-16.41L0 173.2V400C0 426.5 21.49 448 48 448h416c26.51 0 48-21.49 48-48V173.2l-208.8 162.5C289.1 346.6 272.5 352 256 352zM16.29 145.3l212.2 165.1c16.19 12.6 38.87 12.6 55.06 0l212.2-165.1C505.1 137.3 512 125 512 112C512 85.49 490.5 64 464 64h-416C21.49 64 0 85.49 0 112C0 125 6.01 137.3 16.29 145.3z"></path></svg>
+                                        <span class="pl-3">info@ciakit.com</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="px-10 pt-4">
+                                    <span class="text-xl my-auto font-semibold">Domain reliability*</span>
+                                    <br>
+                                    <div class="flex justify-center text-center w-full text-2xl py-2">
+                                        <div class="text-center">
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star"></span>
+                                        </div>
+                                    </div>
+                                    <div>17-05-2022</div>
+                                    <div class="text-xs">*Computed based on the domain registration date</div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                
+                        <div class="hidden content-section rights " id="rights-uk">
+                            <button class="back-btn text-white" data-target="buttons-uk"><i class="fa fa-arrow-left"></i> Back</button>
+                            <div class="max-w-3xl mx-auto p-6 rounded-lg shadow-lg">
+                                <p>In accordance with GDPR you have the following rights over your data:</p>
+                                <div class="flex flex-row gap-2 mt-6 mb-3 justify-start items-center acconsento-click-w-full acconsento-click-flex acconsento-click-text-left acconsento-click-my-2">
+                                    <svg class="acconsento-icon-big-svg w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"></path></svg>
+                                    <div class="acconsento text-[22px]">User Rights in accordance with GDPR</div>
+                                </div>
+
+                                <div class="bg-white rounded-[11px] mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(1)">
+                                        Information
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-1" class="hidden tab-content-data rounded-[11px]  p-4 bg-white text-gray-700">
+                                        Regardless of how we got hold of Your data, you have the right to be informed about the aims Your data could be used for and about the rights associated to them, as the address to contact. Art. 13
+                                    </p>
+                                </div>
+                                
+                                <div class="bg-white rounded-[11px] mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(2)">
+                                        Log In
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-2" class="hidden rounded-[11px]  p-4 bg-white text-gray-700">
+                                        You have the right to obtain the confirmation of any possible treatments of Your own personal data. You could have access to a copy of them and you will be informed about the details of their treatment. Art. 15
+                                    </p>
+                                </div>
+
+                                <div class="bg-white rounded-[11px] mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(3)">
+                                        Rectification
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-3" class="hidden rounded-[11px]  p-4 bg-white text-gray-700">
+                                        If Your personal data are incorrect or incomplete, you have the right to ask for a rectification without an undue delay. Art. 16
+                                    </p>
+                                </div>
+
+                                <div class="bg-white rounded-[11px] mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(4)">
+                                        Cancellation
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-4" class="hidden rounded-[11px]  p-4 bg-white text-gray-700">
+                                        The "Right to Oblivion" allow you to request the cancellation of Your personal data without undue delay, for any reasons. For example, you can request the cancellation whenever the usage of the user personal data won't be useful anymore. Art. 17
+                                    </p>
+                                </div>
+
+                                <div class="bg-white rounded-[11px] mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(5)">
+                                        Limitation to the Treatment
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-5" class="hidden rounded-[11px]  p-4 bg-white text-gray-700">
+                                        In some circumstances, you have the right to request the limitation of Your own data treatment. For example, wherever it is allowed by the rules, it's possible to request that Your own data rather be limited used but not cancelled. Art. 18                                    </p>
+                                </div>
+
+                                <div class="bg-white rounded-[11px] mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(6)">
+                                        Portability of data
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-6" class="hidden rounded-[11px]  p-4 bg-white text-gray-700">
+                                        You have the right to receive a copy the personal data you gave, in order to allow the transmission of them for an additional usage wherever requested. Art. 20                                    </p>
+                                </div>
+
+                                <div class="bg-white rounded-[11px] mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(7)">
+                                        Objection
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-7" class="hidden rounded-[11px]  p-4 bg-white text-gray-700">
+                                        In a lot of cases, you have the right to oppose to the usage and to the treatment of Your own personal data. For example, you have the right to object that your own data would be used for direct marketing purposes. Art. 21 
+                                    </p>
+                                </div>
+
+                                <p>If you wish to exercise one of the rights mentioned above, please send an e-mail to the address info@ciakit.com</p>
+
+                                <div class="flex items-center text-left my-2">
+                                    <svg class="w-16 h-14" viewBox="0 0 2048 1792" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill="currentColor" d="M960 0l960 384v128h-128q0 26-20.5 45t-48.5 19h-1526q-28 0-48.5-19t-20.5-45h-128v-128zm-704 640h256v768h128v-768h256v768h128v-768h256v768h128v-768h256v768h59q28 0 48.5 19t20.5 45v64h-1664v-64q0-26 20.5-45t48.5-19h59v-768zm1595 960q28 0 48.5 19t20.5 45v128h-1920v-128q0-26 20.5-45t48.5-19h1782z"></path>
+                                    </svg>
+                                    <div class="text-xl font-bold my-auto pl-2">Complaint to the supervisory authority</div>
+                                </div>
+
+                                <p>Hereby we inform you about your right to forward potential complaints over the manners we treat personal data to the Garante of data protection directly.</p>
+                            </div>
+                        </div>
+
+                        <div class="hidden content-section" id="id-uk">
+                            <button class="back-btn text-white" data-target="buttons-uk"><i class="fa fa-arrow-left"></i> Back</button>
+                            <div class="mt-4 text-justify max-w-3xl mx-auto p-6 rounded-lg shadow-lg">
+                                <p>Your privacy ID is generated automatically and anonymously for this website and this browser. If you wish to exercise your Log In right, we please you to include Your privacy ID in the request.</p>
+                                <br><br>
+                                <p class="text-[20px]">Privacy ID: </p>
+                                <span class="ml-5 pt-4 text-[16px">abf6dd7c-ad62-46a7-a330-83ee9b85f456</span>
+                            </div>
+                        </div>
+                
+                        <div class="hidden content-section" id="policy-uk">
+                            <button class="back-btn text-white" data-target="buttons-uk"><i class="fa fa-arrow-left"></i> Back</button>
+                            <div class="max-w-3xl mx-auto p-6 rounded-lg shadow-lg text-center">
+                                <p class="text-left">This policy is written in compliance with current Italian legislation on privacy, pursuantly of the regulation (UE) 2016/679, of principles developed by the Garante for the data protection and by the european Authority counterparts.</p>
+
+                                <div class="bg-white rounded-[11px] mt-4 mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(8)">
+                                        <svg class="acconsento-icon-svg w-6 h-6 mt-[-1px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M490.3 40.4C512.2 62.27 512.2 97.73 490.3 119.6L460.3 149.7L362.3 51.72L392.4 21.66C414.3-.2135 449.7-.2135 471.6 21.66L490.3 40.4zM172.4 241.7L339.7 74.34L437.7 172.3L270.3 339.6C264.2 345.8 256.7 350.4 248.4 353.2L159.6 382.8C150.1 385.6 141.5 383.4 135 376.1C128.6 370.5 126.4 361 129.2 352.4L158.8 263.6C161.6 255.3 166.2 247.8 172.4 241.7V241.7zM192 63.1C209.7 63.1 224 78.33 224 95.1C224 113.7 209.7 127.1 192 127.1H96C78.33 127.1 64 142.3 64 159.1V416C64 433.7 78.33 448 96 448H352C369.7 448 384 433.7 384 416V319.1C384 302.3 398.3 287.1 416 287.1C433.7 287.1 448 302.3 448 319.1V416C448 469 405 512 352 512H96C42.98 512 0 469 0 416V159.1C0 106.1 42.98 63.1 96 63.1H192z"></path></svg>
+                                        Treatment Purposes
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-8" class="hidden tab-content-data rounded-[11px]  p-4 bg-white text-gray-700">
+                                        Personal data that forward any requests, through direct email or contacts form, expressly given from users, are used in order to follow up to them and are communicated only to third party subjects involved into the processing of the request itself.
+                                        The optional sending, explicit or voluntary of email to indicated addresses on this website, takes the following acquisition of the sender's address, that is necessary to answer to email communications, as well as the other eventual personal data included spontaneously into the email.                                    
+                                    </p>
+                                </div>
+
+                                <div class="bg-white rounded-[11px] mt-4 mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(9)">
+                                        <svg class="acconsento-icon-svg w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M416 48C416 39.13 408.9 32 400 32h-64C327.1 32 320 39.13 320 48V96h96.04L416 48zM63.88 160.1C61.34 253.9 3.5 274.3 0 404V448c0 17.6 14.4 32 32 32h128c17.6 0 32-14.4 32-32V128H95.88C78.26 128 64.35 142.5 63.88 160.1zM448.1 160.1C447.6 142.5 433.7 128 416.1 128H320v320c0 17.6 14.4 32 32 32h128c17.6 0 32-14.4 32-32v-44C508.5 274.3 450.7 253.9 448.1 160.1zM224 288h64V128H224V288zM176 32h-64C103.1 32 96 39.13 96 48L95.96 96H192V48C192 39.13 184.9 32 176 32z"></path></svg>                                        
+                                        Profilation Treatment
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-9" class="hidden tab-content-data rounded-[11px]  p-4 bg-white text-gray-700">
+                                        With Your free and optional consent (art. 6, par. 1, point a) of GDPR),that can be expressed selecting the specific cell of consent of this website Ciakit s.r.l.s. will treat your personal data for profilation aims, in order to have the possibility to send you promotional and customized communications, as well as consistent with Your profile , to perform analysis and statistical processing related to Your personal features for. "clustering" business, so for the creation of "target group" for internal analyses and to monitor the trade and consumptions trend, in order to create new users "cluster" basing on similar browsing habits and pursuits.
+                                        In case of lack of consent to the treatment of Your own personal data for profilation business, the possibility to browse into the website and to benefit from the related funcionalities won't be affected in any way,as well you won't You won't face any other injurious consequence.
+                                        You could freely withdraw Your consent over the treatment of Your own personal data for profilation business anytime, requesting it into the specific contact section further up.
+                                    </p>
+                                </div>
+
+                                <div class="bg-white rounded-[11px] mt-4 mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(10)">
+                                        <svg class="acconsento-icon-svg w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M528 32h-480C21.49 32 0 53.49 0 80V96h576V80C576 53.49 554.5 32 528 32zM0 432C0 458.5 21.49 480 48 480h480c26.51 0 48-21.49 48-48V128H0V432zM368 192h128C504.8 192 512 199.2 512 208S504.8 224 496 224h-128C359.2 224 352 216.8 352 208S359.2 192 368 192zM368 256h128C504.8 256 512 263.2 512 272S504.8 288 496 288h-128C359.2 288 352 280.8 352 272S359.2 256 368 256zM368 320h128c8.836 0 16 7.164 16 16S504.8 352 496 352h-128c-8.836 0-16-7.164-16-16S359.2 320 368 320zM176 192c35.35 0 64 28.66 64 64s-28.65 64-64 64s-64-28.66-64-64S140.7 192 176 192zM112 352h128c26.51 0 48 21.49 48 48c0 8.836-7.164 16-16 16h-192C71.16 416 64 408.8 64 400C64 373.5 85.49 352 112 352z"></path></svg>                                        
+                                        Who treats your data                                        
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-10" class="hidden tab-content-data rounded-[11px]  p-4 bg-white text-gray-700">
+                                        <strong>Internal recipients:</strong> At Ciakit s.r.l.s. can acces to data only who needs for the purposes above mentioned, whose name, task and related permits are written down into the enterprise fulfillment at GDPR
+                                        <strong>External recipients:</strong> we only transfer personal data to external recipients outside Ciakit s.r.l.s. if this is necessary for the processing or fulfillment of your request, if there is another legal authorization or obligation or if you have given us your consent to do it.
+                                        <strong>They can be:</strong>
+                                        a) Data Processors such as external suppliers that we use for the provision of services, or for the supply of contractually relevant content. These Data Processors are carefully selected and regularly checked by us to ensure that your privacy is preserved. Service providers may use the data only for the purposes specified by us and in accordance with our instructions.
+                                        b) Public bodies, Governmental authorities and institutions, such as prosecutors, courts or tax authorities to which we must transfer personal data to comply with legal obligations. The transmission of data takes place in accordance with Article 6, paragraph 1, letter c) of the GDPR.                                   
+                                    </p>
+                                </div>
+
+                                <div class="bg-white rounded-[11px] mt-4 mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(11)">
+                                        <svg class="acconsento-icon-svg w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"></path></svg>
+                                        Registration Treatment
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-11" class="hidden tab-content-data rounded-[11px]  p-4 bg-white text-gray-700">
+                                        The mandatory information required for registration is marked with a "*" on the respective input field. If you do not provide us this mandatory information, you will not be able to proceed with registration.
+                                        During the registration process you have the possibility to provide additional information on a voluntary basis: this information is not mandatory and submission is at your own discretion.
+                                        The personal data you provide during registration will be used by us to create your profile and identify you after each login.
+                                        The applicable lawfulness criteria for these data processing operations is Article 6, paragraph 1, letter b) of the GDPR
+                                        We will perform the entire data process described in this section, based on your consent and/or to comply with our contract with you and/or based on our legitimate interests.                                  
+                                    </p>
+                                </div>
+
+                                <div class="bg-white rounded-[11px] mt-4 mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(12)">
+                                        <svg class="acconsento-icon-svg w-6 h-6 mt-[-1px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M490.3 40.4C512.2 62.27 512.2 97.73 490.3 119.6L460.3 149.7L362.3 51.72L392.4 21.66C414.3-.2135 449.7-.2135 471.6 21.66L490.3 40.4zM172.4 241.7L339.7 74.34L437.7 172.3L270.3 339.6C264.2 345.8 256.7 350.4 248.4 353.2L159.6 382.8C150.1 385.6 141.5 383.4 135 376.1C128.6 370.5 126.4 361 129.2 352.4L158.8 263.6C161.6 255.3 166.2 247.8 172.4 241.7V241.7zM192 63.1C209.7 63.1 224 78.33 224 95.1C224 113.7 209.7 127.1 192 127.1H96C78.33 127.1 64 142.3 64 159.1V416C64 433.7 78.33 448 96 448H352C369.7 448 384 433.7 384 416V319.1C384 302.3 398.3 287.1 416 287.1C433.7 287.1 448 302.3 448 319.1V416C448 469 405 512 352 512H96C42.98 512 0 469 0 416V159.1C0 106.1 42.98 63.1 96 63.1H192z"></path></svg>
+                                        Important Information
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-12" class="hidden tab-content-data rounded-[11px]  p-4 bg-white text-gray-700">
+                                        The website is protected by special security measures, always in line with technological progress and the evolution of IT risks; the specific security measures observed for the management of the website are contained in the Privacy Policy of Ciakit s.r.l.s..
+                                        We inform you that, despite the company doing everything reasonably possible to protect the site and any personal data provided by surfers, At the current state of the technology it is not possible to completely avoid the risk of security in the navigation or transmission of data via e-mail: no transmission via Internet or e-mail can ever be said to be perfectly safe or error-free.
+                                        The use of passwords, identification numbers (ID) or other special access keys on this website is under the responsibility of the user.
+                                        </p>
+                                </div>
+
+                                <div class="bg-white rounded-[11px] mt-4 mb-4">
+                                    <button class="w-full accordion-title flex flex-row items-center justify-between  font-medium text-blue-600" onclick="toggleAccordion(13)">
+                                        <svg class="acconsento-icon-svg w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"></path></svg>
+                                        <span class="w-[200px] text-center">Duration of conservation and cancellation</span>
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-13" class="hidden tab-content-data rounded-[11px]  p-4 bg-white text-gray-700">
+                                        If the description of the individual services does not provide information on the specific retention period or on the deletion of data, the following applies:<br>
+                                        We retain your personal data only for the time necessary for the pursuit of the intended purposes or, in the case of consent, until consent has been revoked. In case of opposition to the processing, we will delete your personal data, unless their further processing is necessary to pursue other legitimate purposes of the processing.
+                                        We will delete your personal data even when we are obliged to do so for any legal obligations.
+                                        <br><br>
+                                        We will also delete Your personal data when the following conditions occur:<br>
+                                        - In the event that the legal basis on which the processing is based fails, unless further storage is necessary to fulfil legal obligations or to pursue other legitimate purposes of the processing. If the latter case occurs, we will delete the data once the additional legal basis is also removed.
+                                        - When they will no longer be necessary for the purposes of preparing and executing a contract or legitimate interests and there is no other legal basis such as in the event that further storage is necessary to fulfill legal obligations in the field of taxation or conservation of business documents.
+                                        </p>
+                                </div>
+
+                                <div class="bg-white rounded-[11px] mt-4 mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(14)">
+                                        <svg class="acconsento-icon-svg w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 32C49.67 32 64 46.33 64 64V400C64 408.8 71.16 416 80 416H480C497.7 416 512 430.3 512 448C512 465.7 497.7 480 480 480H80C35.82 480 0 444.2 0 400V64C0 46.33 14.33 32 32 32zM160 224C177.7 224 192 238.3 192 256V320C192 337.7 177.7 352 160 352C142.3 352 128 337.7 128 320V256C128 238.3 142.3 224 160 224zM288 320C288 337.7 273.7 352 256 352C238.3 352 224 337.7 224 320V160C224 142.3 238.3 128 256 128C273.7 128 288 142.3 288 160V320zM352 192C369.7 192 384 206.3 384 224V320C384 337.7 369.7 352 352 352C334.3 352 320 337.7 320 320V224C320 206.3 334.3 192 352 192zM480 320C480 337.7 465.7 352 448 352C430.3 352 416 337.7 416 320V96C416 78.33 430.3 64 448 64C465.7 64 480 78.33 480 96V320z"></path></svg>
+                                        Marketing Treatment
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-14" class="hidden tab-content-data rounded-[11px]  p-4 bg-white text-gray-700">
+                                        With your free and optional consent (Article 6, paragraph 1, letter a) of the GDPR), we will process your data for marketing purposes (direct sales, sending of advertising material, carrying out market research, commercial communication and customer satisfaction reporting)by sending the information and offers related to the products and services of Ciakit s.r.l.s., that we think could be of interest to you, by mail, email, sms, fax and landline/mobile phone with or without operator, Whatsapp and social media (such as, for example, Facebook, Instagram and Twitter).
+                                        The consent to the processing of your personal data is free and optional and in case of non consent will not suffer any detrimental consequences.
+                                        You can revoke your consent to the processing of data for marketing purposes at any time and free of charge, without any consequence, in the manner indicated in the appropriate section, also selectively, communicating that he no longer wants to be contacted through one or more contact modes.
+                                        Therefore, please inform us if you wish to consent to the processing of your data for marketing purposes and be contacted by Ciakit s.r.l.s. to select the appropriate box of request for consent.
+                                        </p>
+                                </div>
+
+                                <div class="bg-white rounded-[11px] mt-4 mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(15)">
+                                        <svg class="acconsento-icon-svg w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M96 0C107.5 0 117.4 8.19 119.6 19.51L121.1 32H541.8C562.1 32 578.3 52.25 572.6 72.66L518.6 264.7C514.7 278.5 502.1 288 487.8 288H170.7L179.9 336H488C501.3 336 512 346.7 512 360C512 373.3 501.3 384 488 384H159.1C148.5 384 138.6 375.8 136.4 364.5L76.14 48H24C10.75 48 0 37.25 0 24C0 10.75 10.75 0 24 0H96zM128 464C128 437.5 149.5 416 176 416C202.5 416 224 437.5 224 464C224 490.5 202.5 512 176 512C149.5 512 128 490.5 128 464zM512 464C512 490.5 490.5 512 464 512C437.5 512 416 490.5 416 464C416 437.5 437.5 416 464 416C490.5 416 512 437.5 512 464z"></path></svg>                                        
+                                        E-commerce Treatment
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-15" class="hidden tab-content-data rounded-[11px]  p-4 bg-white text-gray-700">
+                                        The personal data provided by the user during the finalization of the order will be used for the execution and processing of the order and payment transactions made through the online store.
+                                        In case of payment by credit card, The card number, expiry date, holder’s name and verification number (CVC) will also be collected.
+                                        The applicable legal basis for these data processing operations is Art. 6, par. 1, point b) of the GDPR. In order to process payment transactions, we may transmit the relevant data to the collection service provider that we instruct, who will process this data on our behalf and only for payment processing.
+                                        We will keep information about each purchase made on the e-commerce for 10 years, to comply with legal obligations in tax matters and the retention of company documents.
+                                        The personal data contained in your account will be kept until you have decided to close your account.
+                                        </p>
+                                </div>
+
+                                <button id="show-popup" class="cursor-pointer mt-6 hover:bg-[#efc622] font-bold uppercase rounded-xl text- py-[8px] px-[20px] bg-[#efc622]">
+                                    Show policy
+                                </button>
+
+                                <!-- Popup Modal -->
+                                <div class="popup-overlay flex flex-col fixed inset-0 bg-black/9 bg-opacity-50  justify-center items-center z-50" id="popup-overlay">
+                                    <div class="popup-container p-6  h-dvh bg-white max-w-[820px] h-4/5 rounded-lg relative overflow-hidden">
+                                        <button class="close-btn absolute top-2 right-2 text-3xl text-gray-700 hover:text-gray-900" id="close-popup">&times;</button>
+                                        <div class="popup-content  max-h-full overflow-y-auto p-6">
+                                            <div id="acconsento-click-pdf" class="acconsento-click-text-sm" style="border-block: initial; border-inline: initial; border-start-start-radius: initial; border-start-end-radius: initial; border-end-start-radius: initial; border-end-end-radius: initial; overflow-block: initial; overflow-inline: initial; overscroll-behavior-block: initial; overscroll-behavior-inline: initial; margin-block: initial; margin-inline: initial; scroll-margin-block: initial; scroll-margin-inline: initial; padding-block: initial; padding-inline: initial; scroll-padding-block: initial; scroll-padding-inline: initial; inset-block: initial; inset-inline: initial; block-size: initial; min-block-size: initial; max-block-size: initial; inline-size: initial; min-inline-size: initial; max-inline-size: initial; contain-intrinsic-block-size: initial; contain-intrinsic-inline-size: initial; background: initial; background-blend-mode: initial; border: initial; border-radius: initial; box-decoration-break: initial; -moz-float-edge: initial; display: initial; position: initial; float: initial; clear: initial; vertical-align: initial; baseline-source: initial; overflow: initial; overflow-anchor: initial; transform: initial; rotate: initial; scale: initial; translate: initial; offset: initial; scroll-behavior: initial; scroll-snap-align: initial; scroll-snap-type: initial; scroll-snap-stop: initial; overscroll-behavior: initial; isolation: initial; break-after: initial; break-before: initial; break-inside: initial; resize: initial; perspective: initial; perspective-origin: initial; backface-visibility: initial; transform-box: initial; transform-style: initial; transform-origin: initial; contain: initial; content-visibility: initial; container: initial; appearance: initial; -moz-orient: initial; will-change: initial; shape-image-threshold: initial; shape-margin: initial; shape-outside: initial; touch-action: initial; -webkit-line-clamp: initial; scrollbar-gutter: initial; zoom: initial; columns: initial; column-fill: initial; column-rule: initial; column-span: initial; content: initial; counter-increment: initial; counter-reset: initial; counter-set: initial; opacity: initial; box-shadow: initial; clip: initial; filter: initial; backdrop-filter: initial; mix-blend-mode: initial; font: initial; font-synthesis: initial; font-palette: initial; math-depth: initial; math-style: initial; -moz-osx-font-smoothing: initial; visibility: initial; writing-mode: initial; text-orientation: initial; print-color-adjust: initial; image-rendering: initial; image-orientation: initial; dominant-baseline: initial; text-anchor: initial; color-interpolation: initial; color-interpolation-filters: initial; fill: initial; fill-opacity: initial; fill-rule: initial; shape-rendering: initial; stroke: initial; stroke-width: initial; stroke-linecap: initial; stroke-linejoin: initial; stroke-miterlimit: initial; stroke-opacity: initial; stroke-dasharray: initial; stroke-dashoffset: initial; clip-rule: initial; marker: initial; paint-order: initial; border-collapse: initial; empty-cells: initial; caption-side: initial; border-spacing: initial; color: initial; text-transform: initial; hyphens: initial; -moz-text-size-adjust: initial; text-indent: initial; overflow-wrap: initial; word-break: initial; text-justify: initial; text-align-last: initial; text-align: initial; letter-spacing: initial; word-spacing: initial; white-space: initial; text-shadow: initial; text-emphasis: initial; text-emphasis-position: initial; tab-size: initial; line-break: initial; -webkit-text-fill-color: initial; -webkit-text-stroke: initial; ruby-align: initial; ruby-position: initial; text-combine-upright: initial; text-rendering: initial; text-underline-offset: initial; text-underline-position: initial; text-decoration-skip-ink: initial; hyphenate-character: initial; forced-color-adjust: initial; -webkit-text-security: initial; text-wrap: initial; cursor: initial; pointer-events: initial; caret-color: initial; accent-color: initial; color-scheme: initial; scrollbar-color: initial; list-style: initial; quotes: initial; margin: initial; overflow-clip-margin: initial; scroll-margin: initial; outline: initial; outline-offset: initial; padding: 0px !important; scroll-padding: initial; page: initial; inset: initial; z-index: initial; flex-flow: initial; place-content: initial; place-items: initial; flex: initial; place-self: initial; order: initial; height: initial; min-height: initial; max-height: initial; width: initial; min-width: initial; max-width: initial; box-sizing: initial; object-fit: initial; object-position: initial; grid-area: initial; grid: initial; gap: initial; aspect-ratio: initial; contain-intrinsic-size: initial; vector-effect: initial; stop-color: initial; stop-opacity: initial; flood-color: initial; flood-opacity: initial; lighting-color: initial; mask-type: initial; clip-path: initial; mask: initial; x: initial; y: initial; cx: initial; cy: initial; rx: initial; ry: initial; r: initial; d: initial; table-layout: initial; text-overflow: initial; text-decoration: initial; ime-mode: initial; scrollbar-width: initial; user-select: initial; -moz-window-dragging: initial; -moz-force-broken-image-icon: initial; transition: initial; animation: initial; animation-composition: initial; -moz-box-align: initial; -moz-box-direction: initial; -moz-box-flex: initial; -moz-box-orient: initial; -moz-box-pack: initial; -moz-box-ordinal-group: initial;">
+                                            <div class="acconsento-click-informative-header ">
+                                                <h2 class="acconsento-click-text-center acconsento-click-informative-title">
+                                                    <b class="informative-title text-center">
+                                                       <h3 class="text-2xl mb-4"> INFORMATION PURSUANT TO ARTICLES 13-14 REG. EU N. 2016/679 FOR THE PROCESSING OF PERSONAL DATA</h3>
+                                                    </b>
+                                                </h2>
+                                                
+                                                <div class="acconsento-click-text-justify">
+                                                    Dear navigator,<br>Ciakit s.r.l.s. hereby informs you that, pursuant to and for the purposes of articles 13 and 14 of the European Regulation no. 2016/679 GDPR, the data acquired and/or provided by you will be processed in compliance with the regulations mentioned below.
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="acconsento-click-section">
+                                                <div id="roles-section">
+                                                    <div class="acconsento-click-section-title flex flex-row items-center gap-2 mb-2">
+                                                        <img  src="https://lh5.googleusercontent.com/1u2MCaWh1cITv_Exa3lUeWyCMgoBndOjPnv3TlEYCQzS4QGpd0JiLZSEHvBEHnPNqz6cdxYtx0sAZUmX8uCYcaiN8UcI5yCLE7tSyFZrfI-S_TdkzW9DooanBHX796Is7me0iUIcq9y39f2b5Q" alt="" width="25px" height="25px">
+                                                        <b>ROLES</b>
+                                                    </div>
+                                                    <div class="acconsento-click-section-body">
+                                                        The Data Controller is: Ciakit s.r.l.s. , VIA CAVOUR 35/A ESTE 35042 PD , info@ciakit.com
+                                                    </div>
+                                                </div>
+                                            </div>
+<br>
+                                            <div class="acconsento-click-section">
+                                                <div id="mandatory-treatments-section">
+                                                    <div class="acconsento-click-section-title flex flex-row items-center gap-2 mb-2">
+                                                        <img src="https://lh5.googleusercontent.com/BYGSUAQUDOjLwccszI3KH5o50EuyZbuiBvTneHoNV2fEwH_cl8M74SDBha-SVVqC-dwmeT8kyVWjE5ewX_HA_VhOuLvQTR2sS_axga6JEJ6CS93l_AEgnKiBnJgM_MQdo3JwvvDqEePbEtlOQA" alt="" width="39" height="27">
+                                                        <b>PURPOSE OF MANDATORY TREATMENTS</b>
+                                                    </div>
+
+                                                    
+                                                            <div id="sign-up-treatment" class="acconsento-click-treatment">
+                                                        <div class="acconsento-click-treatment-title">
+                                                            <b>Processing of personal data for registration purposes</b>
+                                                        </div>
+                                                        <div class="acconsento-click-treatment-body">
+                                                            The mandatory information required for registration is highlighted in the respective input field. If you do not provide this mandatory information, you will not be able to proceed with registration. During the registration process you have the opportunity to provide additional information on a voluntary basis, this information is not mandatory and submission is at your discretion.<br> The personal data you provide during registration will be used by us to create your profile and identify you following each login.<br> The applicable legal basis for these data processing operations is Article 6 (1) (b) of the GDPR. We will carry out all data processing described in this section based on your consent and/or to comply with our contract with you and/or based on our legitimate interests.
+                                                        </div>
+                                                    </div>
+                                                    
+                                                            <div id="e-commerce-treatment" class="acconsento-click-treatment">
+                                                        <div class="acconsento-click-treatment-title">
+                                                            <b>Processing of personal data for e-commerce purposes</b>
+                                                        </div>
+                                                        <div class="acconsento-click-treatment-body">
+                                                            The personal data provided by the user when finalizing the order will be used for the execution and processing of the order and payment transactions made through the online store.<br>If paying by credit card, the card number, expiration date, cardholder name and verification number (CVC) will also be collected.<br>The applicable legal basis for these data processing operations is Article 6 (1) (b) of the GDPR. In order to process payment transactions, we may pass on the relevant data to the collection service provider commissioned by us, who will process this data on our behalf and only for payment processing.<br>We will retain information relating to each purchase made on e-commerce for 10 years, to fulfill legal obligations regarding tax matters and the conservation of company documents.<br>The personal data contained in your account will be retained until you decide to close your account.
+                                                        </div>
+                                                    </div>
+                                                        </div>
+                                            </div>
+<br>
+                                            <div class="acconsento-click-section">
+                                                <div id="optional-treatments-section">
+                                                    <div class="acconsento-click-section-title flex flex-row items-center gap-2 mb-2">
+                                                        <img src="https://lh4.googleusercontent.com/sNLfbFZpAS5tpDYVI1Z8vjAmr2tRNrVM68JMY9hY2YnaN2bX-EXGa7sRjTMavZpB7gJN1R3yp7f80YnbHB4YgAWVdiqfYYfk6sGvhyhDHxCp48QVbmpfm-olKMHV4SuW__Nt97JujdEeJ6A46g" alt="" width="50" height="41">
+                                                        <b class="mt-2">PURPOSE OF NON-MANDATORY TREATMENTS</b>
+                                                    </div>
+                                                            <div id="profiling-treatment" class="acconsento-click-treatment">
+                                                        <div class="acconsento-click-treatment-title">
+                                                            <b>Processing of personal data for profiling purposes</b>
+                                                        </div>
+                                                        <div class="acconsento-click-treatment-body">
+                                                            With your free and optional consent (article 6, paragraph 1, letter a) of the GDPR), which can be expressed by selecting the appropriate consent box on the website, Ciakit s.r.l.s. will process your personal data for profiling purposes, in order to be able to send promotional communications personalized and consistent with your profile, to carry out analyzes and statistical processing regarding your personal characteristics for "clustering" activities, or for the creation of "target groups" for internal analyzes and monitoring of market and product trends consumption, for the creation of new "clusters" of users based on similar browsing habits and interests. In case of failure to consent to the processing of your personal data for profiling purposes, the possibility of browsing the website and benefiting from the related functions will not be compromised in any way nor will you suffer any other prejudicial consequence. In any case, you may freely and free of charge revoke your consent to the processing of your personal data for profiling purposes at any time by making a request in the appropriate contact section.
+                                                        </div>
+                                                    </div>
+                                                    
+                                                            <div id="marketing-treatment" class="acconsento-click-treatment">
+                                                        <div class="acconsento-click-treatment-title">
+                                                            <b>Processing of personal data for marketing purposes</b>
+                                                        </div>
+                                                        <div class="acconsento-click-treatment-body">
+                                                            With your free and optional consent (pursuant to Article 6, paragraph 1, letter a) of the GDPR), we will process your personal data for marketing purposes, which include direct sales, sending advertising material, carrying out market research, commercial communication and evaluating the degree of customer satisfaction. We will send information and offers relating to Ciakit s.r.l.s. products and services that we believe may be of interest to you via post, e-mail, SMS, fax, landline/mobile telephone with or without operator, WhatsApp or social media (such as, for example, Facebook, Instagram and Twitter).<br>Consent to the processing of your personal data for marketing purposes is free and optional. In case of lack of consent, you will not suffer any prejudicial consequences. You can revoke your consent to the processing of data for marketing purposes at any time and free of charge, without any consequences, using the methods indicated in the specific section. You can also choose to selectively revoke your consent, specifying which contact methods you no longer wish to receive.
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    
+                                                    
+                                                        </div>
+                                            </div>
+                                            <br>
+                                            <div class="acconsento-click-section">
+                                                <div id="processing-section">
+                                                    <div class="acconsento-click-section-title flex flex-row items-center gap-2 mb-2">
+                                                        <img src="https://lh5.googleusercontent.com/i_-1VyrtuYp6QE81qWIslEtWoSQHJSQqLAXKm_uUOBxjC3WY-OC-jPjrwSIdedEIyhQO_5TvCwkyxRmDtTC1RYRLaLTCeSh4d0JkMafDzuYujtIPU9i2qEtGzdjfUE8hw7l5FuDBSkwvzSRIig" alt="" width="57" height="42">
+                                                        <b>TREATMENT METHODS</b>
+                                                    </div>
+                                                    <div class="acconsento-click-section-body">
+                                                        The processing consists, for example, of collection, recording, organisation, conservation, extraction, consultation, use, communication and deletion of personal data. It is carried out, for the aforementioned purposes, according to the principles (ex art. 5 of GDPR n. 2016/679) of lawfulness, correctness, transparency, data minimization and accuracy. The data is processed by telephone, paper, computer and telematic methods. The processing takes place using suitable tools, technical and organizational measures adequate to guarantee security, integrity and confidentiality, avoiding in particular the risk of loss, unauthorized access, illicit use, diffusion, in compliance with the provisions of the art. 32 of the GDPR n. 2016/679, by the subjects and in compliance with the provisions of the art. 29 of the GDPR n. 2016/679 and art. 2- quaterdecies of the Privacy Code.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="acconsento-click-section">
+                                                <div id="data-nature-section">
+                                                    <div class="acconsento-click-section-title flex flex-row items-center gap-2 mb-2">
+                                                        <img src="https://lh3.googleusercontent.com/O8hc4Ilq3gEjrKc4bTxN99YR9HuF751ZtMay8kM6V5dGtsPlW8EeVAwfuT-4zwzGfe07v_C7f4Z5ip6lPTxsXeFO_o5kGZQBrfy-S-nL56QNR0x01wcQyTEOkOsi-LKlolUVwArkP-cWG9qKWQ" alt="" width="57" height="45">
+                                                        <b>NATURE OF THE PROVISION OF DATA AND CONSEQUENCES OF REFUSAL TO RESPOND</b>
+                                                    </div>
+                                                    <div class="acconsento-click-section-body">
+                                                        The provision of data for mandatory purposes does not require explicit consent. Without this data, we will not be able to provide our services. The provision of data for other purposes is optional and requires your explicit consent. In case of lack of consent, you will not be able to receive e newsletters, information material or commercial communications regarding the services offered by the Owner or by third-party companies. However, you will still have access to our services.<br>We process your personal information only when there is a legal basis for such processing. The legal bases include:<ul class="acconsento-click-ul"> <li>Your consent to the processing activities in question;</li> <li>The legal obligations that we are required to satisfy;</li> <li>The execution of rules dictated by laws or regulations, or by contracts, agreements or other legal instruments;</li> <li>Studies conducted by research institutions, preferably on anonymized personal information;</li> <li>The execution of a contract and related pre-contractual obligations, if you are a party to such contract;</li> <li>The exercise of our rights in court, administrative proceedings or arbitration;</li> <li>The defense or protection of your or a third party's physical safety;</li> <li>Health protection, in the context of procedures implemented by entities or professionals in the healthcare sector;</li> <li>Our legitimate interests, provided that your fundamental rights and freedoms do not override those interests;</li> <li>Credit protection.</li> </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="acconsento-click-section">
+                                                <div id="data-access-section">
+                                                    <div class="acconsento-click-section-title flex flex-row items-center gap-2 mb-2">
+                                                        <img src="https://lh6.googleusercontent.com/3nNRMUe2G1zrdkabflQV5uWF9kubqoeJbC02mLT0WnY3mdEk_YURildeLUKS5VEus3L9x7hiotA87ZvTIR4xMlgrApXfxI4-Qdq4HJQ6td23Nj8x-pLlbnuUaCQq4IQq_1hDjSS06Om-hSlynQ" alt="" width="41" height="33">
+                                                        <b>ACCESS TO DATA</b>
+                                                    </div>
+                                                    <div class="acconsento-click-section-body">
+                                                        Your data may be made accessible for the purposes set out below:<ul class="acconsento-click-ul"> <li>to the employees and collaborators of the Data Controller in their capacity as data processors and/or system administrators;</li> <li>to third-party companies or other subjects (for example: professional firms, consultants, software houses that provide management software, credit institutions, insurance companies, etc.) who carry out outsourced activities on behalf of the Data Controller, in their capacity as external data controllers .</li> </ul>Among the Personal Data collected by this Website, independently or through third parties, there are: Tracking Tools; Usage D ata; first name; e-mail; website;unique device identifiers for advertising (Google Advertiser ID or IDFA identifier, for example); number of Users; city; device information; session statistics; browserinformation; answers to questions; click; keypress events; motion sensor events; mouse movements; position relative to scrolling; touch events.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="acconsento-click-section">
+                                                <div id="data-access-section">
+                                                    <div class="acconsento-click-section-title flex flex-row items-center gap-2 mb-2">
+                                                        <img src="https://lh5.googleusercontent.com/DZuBjCZK0AZWZVzD3wOwKHn0ELazLVR7GlVbQlIl6RwdhV_hFIf5OmAQcKZwlTwaQQclnkh_Af5ZAdafsdDoCbW-fw0Qu9pN858rzJpsWezXVieOIHM9jQFFtXEgOa1Tp7P6ILo7IOuH89hvyA" alt="" width="50" height="37">
+                                                        <b>DATA COMMUNICATION</b>
+                                                    </div>
+                                                    <div class="acconsento-click-section-body">
+                                                        The Data Controller may communicate your data to the Public Administration, Supervisory Bodies and/or Judicial Authorities, as well as to all other subjects to whom communication is mandatory or necessary by law. Your information will not be disseminated.
+                                                    </div>
+                                                </div>
+                                            </div>
+<br>
+
+                                            <div class="acconsento-click-section">
+                                                <div id="extra-eu-data-transfer-section">
+                                                    <div class="acconsento-click-section-title flex flex-row items-center gap-2 mb-2">
+                                                        <img src="https://lh4.googleusercontent.com/FjiHdjtOtwZ37J65VrGFVvAIsrw_POSqBPdY7epd6E0PBQfDOl8sKInNPzwnMVfICbw3R2Afd9LLpIMCsl1Qy9JMV2mLEDU4rpghFJAPjBXtt4Zja0n8RNAK9k0rN05wu-4Ss-8W3SjDIhHTyQ" alt="" width="30" height="29">
+                                                        <b>DATA RETENTION</b>
+                                                    </div>
+                                                    <div class="acconsento-click-section-body">
+                                                        All personal data provided will be processed in compliance with the principles of lawfulness, correctness, relevance and proportionality, exclusively with the necessary methods, including IT and telematics, to pursue the purposes described above. Personal data will be retained for a period of 6 years following the last contact with the interested party or until the interested party requests cancellation. In this case, the data related to the legitimate interest of the owner or necessary for the fulfillment of legal obligations may still be retained. It should be noted that the information systems used for the management of the information collected are configured, from the outset, so as to minimize the use of personal data.
+                                                    </div>
+                                                </div>
+                                            </div>
+<br>
+                                            <div class="acconsento-click-section">
+                                                <div id="extra-eu-data-transfer-section">
+                                                    <div class="acconsento-click-section-title flex flex-row items-center gap-2 mb-2">
+                                                        <img src="https://lh3.googleusercontent.com/00b2RcHGgEAszPm631MI1gYpK0Wf5G1EDDvpCfasDD_RC8ZNHDDZIbXZrPymgNCsteY1KaOr9_VJHN-gxJ1KLacxXOphZ3g7VQp226GpggmoAWuDA30ogU4UlqnC_L3NfFcCaXrlVZcEbHSxug" alt="" width="31" height="35">
+                                                        <b>RIGHTS OF THE INTERESTED PARTY</b>
+                                                    </div>
+                                                    <div class="acconsento-click-section-body">
+                                                        In your capacity as an interested party, you have the rights referred to in the art. 15 ss and art. 77 of the GDPR, and precisely the rights of:<ul class="acconsento-click-ul"> <li>Obtain confirmation from the data controller as to whether or not personal data concerning him or her are being processed and, in this case, to obtain access to the personal data and the following information: the purposes of the processing; the categories of personal data in question; the recipients or categories of recipients to whom the personal data have been or will be communicated, in particular if recipients are from third countries or international organisations; when possible, the expected retention period of personal data or, if this is not possible, the criteria used to determine this period; if the data are not collected from the interested party, all available information on their origin; the existence of an automated decision-making process, including profiling, and, at least in such cases, significant information on the logic used, as well as the importance and expected consequences of such processing for the interested party.</li> <li>Obtain from the data controller the rectification of inaccurate personal data concerning him without unjustified delay. Taking into account the purposes of the processing, the interested party has the right to obtain the integration of incomplete personal data, including by providing a supplementary declaration.</li> <li>Obtain from the data controller information relating to personal data concerning him without unjustified delay, if one of the following reasons exists: the personal data are no longer necessary in relation to the purposes for which they were collected or otherwise processed; the i nterested party withdraws the consent on which the processing is based in accordance with Article 6, paragraph 1, letter a), or Article 9, paragraph 2, letter a), and if there is no other legal basis for the processing; the interested party objects to the processing pursuant to Article 21, paragraph 1, and there is no overriding legitimate reason to proceed with the processing, or objects to the processing pursuant to Article 21, paragraph 2; the personal data have been processed unlawfully; the personal data must be erased for compliance with a legal obligation under Union or Member State law to which the controller is subject.</li> <li>Obtain from the data controller the limitation of processing when one of the following hypotheses occurs: the interested part y contests the accuracy of the personal data, for the period necessary for the data controller to verify the accuracy of such personal data; the processing is unlawful and the interested party opposes the deletion of the personal data and requests instead that their use be limited; although the data controller no lo nger needs them for the purposes of the processing, the personal data are necessary for the interested party to ascertain, exercise or defend a right in court ; the interested party has objected to the processing pursuant to Article 21, paragraph 1, pending verification of the possible prevalence of the legitimate reasons of the data controller with respect to those of the interested party.</li> <li>Receive the personal data concerning him/her provided to a data controller in a structured, commonly used and machine -readable format and transmit such data to another data controller without impediments by the data controller to whom he/she provided them if the processing is carried out by digital means. In exercising their rights regarding data portability, the interested party has the right to obtain the direct transmission of personal data from one data controller to another, if technically feasible.</li> <li> Object at any time, for reasons related to your particular situation, to the processing of personal data concerning you pursuant to Article 6, paragraph 1, letters e) or f), including profiling on the basis of these provisions. If personal data are processed for direct marketing purposes, the interested party has the right to object at any time to the processing of personal data concerning him or her carried out for such purposes, including profiling to the extent that it is connected to such marketing.</li> <li>Right not to be subjected to a decision based solely on automated processing, including profiling, which produces legal effects concerning you or similarly significantly affects you.</li> <li>Right to lodge a complaint with a supervisory authority pursuant to art. 77.</li> </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+<br>
+                                            <div class="acconsento-click-section">
+                                                <div id="extra-eu-data-transfer-section">
+                                                    <div class="acconsento-click-section-title flex flex-row items-center gap-2 mb-2">
+                                                        <img src="https://lh5.googleusercontent.com/ppuHn52oUpULpMg5pE45IoMt_emEALgfkT3WzhSklwwNgVjZjardtK-JxZKMnxuTwkjGVdFbCufDdqdftBg85zmVCSE0vhKJRHPI_mFlc-FcVK1ZQhEmdyZ_xFZrD6az4H28gmy6sxGvufUgfA" alt="" width="44" height="32">
+                                                        <b>METHOD OF EXERCISE OF RIGHTS</b>
+                                                    </div>
+                                                    <div class="acconsento-click-section-body">
+                                                        You may exercise your rights at any time by contacting the Owner at the following email address: info@ciakit.com
+                                                    </div>
+                                                </div>
+                                            </div>
+<br>
+                                            <div class="acconsento-click-section">
+                                                <div id="extra-eu-data-transfer-section">
+                                                    <div class="acconsento-click-section-title flex flex-row items-center gap-2 mb-2">
+                                                        <img src="https://lh4.googleusercontent.com/skbNXdNIyFRwsbqVx9uDbwI1ieVSfuRWYxRY2fRCmmh00dQvjRlI5tMjPsuUdFxi32Y7Regm9mbS72G0dPnCRAqGvq4OaB4cKEmF1ttN2TwCnTRwmL4yGxXvAYXujnMKyMKcZFRTpfK95BkZBg" alt="" width="54" height="49">
+                                                        <b>EXTERNAL AND APPOINTED MANAGERS</b>
+                                                    </div>
+                                                    <div class="acconsento-click-section-body">
+                                                        The updated list of external managers and data processors is kept at the registered office of the Data Controller
+                                                    </div>
+                                                </div>
+                                            </div>
+<br>
+                                            <div class="acconsento-click-section">
+                                                <div id="extra-eu-data-transfer-section">
+                                                    <div class="acconsento-click-section-title flex flex-row items-center gap-2 mb-2">
+                                                        <img src="https://lh4.googleusercontent.com/kvEMBp6_S8WE8SNH3b2XwA5CcP4lc9KJiGMXi-4nVJWX5M3DwhWd73E0yx43CNviRKXVQJcsJBJ1oQHgVYY3ghGNUpsJQ5fZ_ok17ywzByYWud_TjLHjawg4OWAwun16pGp7Gv3sAIqoJDZPMg" alt="" width="54" height="46">
+                                                        <b>MODIFICATION OF THE CURRENT INFORMATION</b>
+                                                    </div>
+                                                    <div class="acconsento-click-section-body">
+                                                        This information was drawn up on 02-09-2024 and may undergo changes over time also depending on legislative and regulatory additions or changes in the matter. The interested party is invited to consult this page often.
+                                                    </div>
+                                                </div>
+                                            </div>
+<br>
+                                            <div id="acconsento-click-informative-footer">
+                                                <a href="https://www.garanteprivacy.it/web/guest/home/docweb/-/docweb-display/docweb/9732629" rel="noopener noreferrer" target="_blank">Icons</a> by <a href="https://www.athlantic.it" rel="noopener noreferrer" target="_blank">Athlantic S.r.l.</a> licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener noreferrer" target="_blank">CC BY 4.0</a>. Free use without deleting this mention
+                                            </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="hidden content-section" id="cookie-uk">
+                            <button class="back-btn text-black" data-target="buttons-uk"><i class="fa fa-arrow-left"></i> Back</button>
+                            <p class="mt-4">This is the **COOKIE** content.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content mt-4 p-6 pt-4 hidden" id="tab-it"> 
+                    <div class="title-content">
+                        <h3 class="text-2xl uppercase text-center bg-[#efc622] p-2">Centro Di Controllo Privacy</h3>
+                        
+                        <!-- Button List -->
+                        <div class="content-list pt-6 flex flex-col gap-4" id="buttons-it">
+                            <button class="info px-4 py-3 flex flex-row justify-between items-center bg-white text-black rounded-full" data-target="info-it">Informazioni sul sito <i class="fa fa-check p-1 bg-[#efc622] text-white rounded-full"></i></button>
+                            <button class="info px-4 py-3 flex flex-row justify-between items-center bg-white text-black rounded-full" data-target="rights-it">I miei diritti<i class="fa fa-check p-1 bg-[#efc622] text-white rounded-full"></i></button>
+                            <button class="info px-4 py-3 flex flex-row justify-between items-center bg-white text-black rounded-full" data-target="id-it">Il mio ID privacy<i class="fa fa-check p-1 bg-[#efc622] text-white rounded-full"></i></button>
+                            <button class="info px-4 py-3 flex flex-row justify-between items-center bg-[#efc622] text-black rounded-full" data-target="policy-it">Politica sulla privacy<i class="fa fa-check p-1 bg-white text-[#efc622] rounded-full"></i></button>
+                            <button class="info px-4 py-3 flex flex-row justify-between items-center bg-[#efc622] text-black rounded-full" data-target="cookie-it">Gestione dei cookie<i class="fa fa-check p-1 bg-white text-[#efc622] rounded-full"></i></button>
+                        </div>
+                
+                        <!-- Content Sections (Initially Hidden) -->
+                        <div class="hidden content-section" id="info-it">
+                            <button class="back-btn text-white" data-target="buttons-it"><i class="fa fa-arrow-left"></i> Indietro</button>
+                            <p class="mt-4">Questa è la sezione **Informazioni sul sito**.</p>
+                        </div>
+                
+                        <div class="hidden content-section" id="rights-it">
+                            <button class="back-btn text-white" data-target="buttons-it"><i class="fa fa-arrow-left"></i> Indietro</button>
+                            <p class="mt-4">Questa è la sezione **I miei diritti**.</p>
+                        </div>
+                
+                        <div class="hidden content-section" id="id-it">
+                            <button class="back-btn text-white" data-target="buttons-it"><i class="fa fa-arrow-left"></i> Indietro</button>
+                            <p class="mt-4">Questa è la sezione **Il mio ID privacy**.</p>
+                        </div>
+                
+                        <div class="hidden content-section" id="policy-it">
+                            <button class="back-btn text-white" data-target="buttons-it"><i class="fa fa-arrow-left"></i> Indietro</button>
+                            <p class="mt-4">Questa è la sezione **Politica sulla privacy**.</p>
+                        </div>
+                
+                        <div class="hidden content-section" id="cookie-it">
+                            <button class="back-btn text-white" data-target="buttons-it"><i class="fa fa-arrow-left"></i> Indietro</button>
+                            <p class="mt-4">Questa è la sezione **Gestione dei cookie**.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="logo-sidebar flex justify-center absolute pb-5 pt-5 bottom-0 h-fit bg-black w-full">
+                    <img id="acconsento-drawer-logo" width="120" height="0" alt="" class="acconsento-click-m-auto acconsento-click-w-1/2 acconsento-click-max-w-[200px] bottom-0" src="https://accesso.acconsento.click/storage/1621/w0k9kopZ8nJiN4ii8K3kQBuK8EpQRuGIn0x3Ll4A.png">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // Show popup when button is clicked
+        document.getElementById('show-popup').addEventListener('click', function() {
+            document.getElementById('popup-overlay').classList.remove('hidden');
+        });
+
+        // Close popup when the cross button is clicked
+        document.getElementById('close-popup').addEventListener('click', function() {
+            document.getElementById('popup-overlay').classList.add('hidden');
+        });
+
+        // Close popup when clicking outside the popup container
+        document.getElementById('popup-overlay').addEventListener('click', function(e) {
+            if (e.target === document.getElementById('popup-overlay')) {
+                document.getElementById('popup-overlay').classList.add('hidden');
+            }
+        });
+
+    </script>
+
+    <script>
+        document.querySelectorAll(".info").forEach(button => {
+            button.addEventListener("click", () => {
+                const targetId = button.getAttribute("data-target");
+                const parentTab = button.closest(".tab-content");
+                const title = parentTab.querySelector("h3");
+    
+                // Save original title if not already set
+                if (!title.dataset.original) {
+                    title.dataset.original = title.innerText;
+                }
+    
+                // Change title to button text
+                title.innerText = button.innerText;
+    
+                // Hide button list & show target content
+                parentTab.querySelector(".content-list").classList.add("hidden");
+                parentTab.querySelector(`#${targetId}`).classList.remove("hidden");
+            });
+        });
+    
+        document.querySelectorAll(".back-btn").forEach(button => {
+            button.addEventListener("click", () => {
+                const targetId = button.getAttribute("data-target");
+                const parentTab = button.closest(".tab-content");
+                const title = parentTab.querySelector("h3");
+    
+                // Restore original title
+                if (title.dataset.original) {
+                    title.innerText = title.dataset.original;
+                }
+    
+                // Hide all content sections
+                parentTab.querySelectorAll(".content-section").forEach(content => content.classList.add("hidden"));
+    
+                // Show the main button list
+                parentTab.querySelector(`#${targetId}`).classList.remove("hidden");
+            });
+        });
+    </script>
+    
+    
+    <script>
+        const lockBtn = document.getElementById("lockBtn");
+        const sidebar = document.getElementById("sidebar");
+        const closeBtn = document.getElementById("closeBtn");
+
+        // Open Sidebar
+        lockBtn.addEventListener("click", () => {
+            sidebar.style.left = "0px";
+            lockBtn.style.display = "none"; // Hide lock button
+        });
+
+        // Close Sidebar
+        closeBtn.addEventListener("click", () => {
+            sidebar.style.left = "-500px";
+            setTimeout(() => {
+                lockBtn.style.display = "block"; // Show lock button after animation
+            }, 300);
+        });
+    </script>
+
+    <script>
+        const tabButtons = document.querySelectorAll(".tab-btn");
+        const tabContents = document.querySelectorAll(".tab-content");
+
+        tabButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                const tab = button.getAttribute("data-tab");
+
+                // Remove active styles from all buttons
+                tabButtons.forEach(btn => btn.classList.remove("bg-black", "text-white"));
+
+                // Add active styles to the clicked button
+                button.classList.add("bg-black", "text-white");
+
+                // Hide all tab contents
+                tabContents.forEach(content => content.classList.add("hidden"));
+
+                // Show selected tab content
+                document.getElementById(`tab-${tab}`).classList.remove("hidden");
+            });
+        });
+
+    // Set the default active tab (UK)
+        document.querySelector(".tab-btn").classList.add("bg-black", "text-white");
+    </script>
+
+<script>
+    function toggleAccordion(id) {
+        const sections = document.querySelectorAll('[id^="content-"]');
+        sections.forEach(section => {
+            if (section.id === `content-${id}`) {
+                section.classList.toggle('hidden');
+            } else {
+                section.classList.add('hidden');
+            }
+        });
+    }
+
+</script>
+
+</body>
+</html>
