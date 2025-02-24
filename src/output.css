@@ -605,6 +605,9 @@
   .right-4 {
     right: calc(var(--spacing) * 4);
   }
+  .right-\[20px\] {
+    right: 20px;
+  }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
   }
@@ -613,6 +616,9 @@
   }
   .bottom-5 {
     bottom: calc(var(--spacing) * 5);
+  }
+  .bottom-\[20px\] {
+    bottom: 20px;
   }
   .left-0 {
     left: calc(var(--spacing) * 0);
@@ -625,6 +631,9 @@
   }
   .left-\[-500px\] {
     left: -500px;
+  }
+  .left-\[20px\] {
+    left: 20px;
   }
   .left-\[30\%\] {
     left: 30%;
