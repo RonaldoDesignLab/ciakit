@@ -590,6 +590,9 @@
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
+  .top-1 {
+    top: calc(var(--spacing) * 1);
+  }
   .top-2 {
     top: calc(var(--spacing) * 2);
   }
@@ -599,11 +602,20 @@
   .right-0 {
     right: calc(var(--spacing) * 0);
   }
+  .right-1 {
+    right: calc(var(--spacing) * 1);
+  }
   .right-2 {
     right: calc(var(--spacing) * 2);
   }
   .right-4 {
     right: calc(var(--spacing) * 4);
+  }
+  .right-\[-1\] {
+    right: -1;
+  }
+  .right-\[-1px\] {
+    right: -1px;
   }
   .right-\[20px\] {
     right: 20px;
@@ -2235,6 +2247,9 @@
   }
   .px-\[12px\] {
     padding-inline: 12px;
+  }
+  .px-\[14px\] {
+    padding-inline: 14px;
   }
   .px-\[20px\] {
     padding-inline: 20px;
