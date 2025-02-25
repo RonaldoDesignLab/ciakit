@@ -15,9 +15,35 @@
             margin: 0;
             padding: 0;
         }
+
+        /* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+	.dropdown-menu li{ position: relative; 	}
+	.nav-item .submenu{ 
+		display: none;
+		position: absolute;
+		left:100%; top:-7px;
+	}
+	.nav-item .submenu-left{ 
+		right:100%; left:auto;
+	}
+	.dropdown-menu > li:hover{ background-color: #f1f1f1 }
+	.dropdown-menu > li:hover > .submenu{ display: block; }
+}	
+/* ============ desktop view .end// ============ */
+
+/* ============ small devices ============ */
+@media (max-width: 991px) {
+  .dropdown-menu .dropdown-menu{
+      margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
+  }
+}	
+
     </style>
 </head>
 <body class="w-full mx-auto font-[Cairo] leading-[1.2]">
+
+    
 
     <div class="header">
 
@@ -147,6 +173,9 @@
                 </div>
             </div>
         </header>
+
+
+        
         
         <!-- Mobile:  Menu START--><!-- Mobile:  Menu START--><!-- Mobile:  Menu START-->
 
@@ -162,28 +191,52 @@
                     </button>
                 
                     <!-- Dropdown Menu -->
-                    <div id="mobile-dropdown-menu" class="absolute left-0 hidden bg-[#171717] w-fit text-white mt-2 rounded shadow-lg transition-opacity duration-200opacity-0">
-                        <h4 class="text-white py-4 px-7 border-b-1 text-[18px] uppercase">Esplora</h4>
-                        <div class="flex flex-row w-[87vw] p-4 whitespace-nowrap  cursor-pointer ">
-                            <div class="mobile-generi w-[50%]">
-                                <div class="px-4 py-2"><span class="font-bold">GENERI</span></div>
-                                <div class="px-4 py-2 hover:underline"><a href="#">Animazione</a></div>
-                                <div class="px-4 py-2 hover:underline"><a href="#">Azione</a></div>
-                                <div class="px-4 py-2 hover:underline"><a href="#">Commedia</a></div>
-                                <div class="px-4 py-2 hover:underline"><a href="#">Fantascienza</a></div>
-                                <div class="px-4 py-2 hover:underline"><a href="#">Thriller</a></div>
-                                <div class="px-4 py-2 underline"><a href="#">Scopri tutti ></a></div>
-                            </div>
-                            <div class="mobile-paesi w-[50%]">
-                                <div class="px-4 py-2"><span class="font-bold">PAESI</span></div>
-                                <div class="px-4 py-2 hover:underline"><a href="#">Francia</a></div>
-                                <div class="px-4 py-2 hover:underline"><a href="#">Germania</a></div>
-                                <div class="px-4 py-2 hover:underline"><a href="#">Italia</a></div>
-                                <div class="px-4 py-2 hover:underline"><a href="#">Spagna</a></div>
-                                <div class="px-4 py-2 hover:underline"><a href="#">Stati Uniti</a></div>
-                                <div class="px-4 py-2 underline"><a href="#">Scopri tutti ></a></div>
-                            </div>
-                        </div>
+                    <div id="mobile-dropdown-menu" class="absolute left-0 hidden bg-[#171717] w-[70vw] text-white mt-2 rounded shadow-lg transition-opacity duration-200opacity-0">
+                        
+                        
+                        <ul class="font-bold flex flex-col text-left p-4  w-full rounded-lg ">
+                            <li class="relative group">
+                                <button id="explore-btn" class="py-2 ml-2 flex flex-row items-center center hover:underline rounded cursor-pointer font-bold">
+                                    Esplora 
+                                    <svg class="w-2.5 h-2.5 ms-3 mt-[2px] ml-[5px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                                    </svg>
+                                </button>
+                                <!-- Dropdown Submenu -->
+                                <div id="explore-menu" class="absolute left-0 hidden group-hover:block bg-[rgb(248,250,252)] w-fit text-black mt-2 rounded shadow-lg transition-opacity duration-200 opacity-0 group-hover:opacity-100 md:block">
+                                    <div class="generi-wrap flex flex-row w-[100%] p-4 whitespace-nowrap">
+                                        <div class="generi w-[50%]">
+                                            <div class="px-4 py-2 font-bold">GENERI</div>
+                                            <div class="px-4 py-2 hover:underline"><a href="#">Animazione</a></div>
+                                            <div class="px-4 py-2 hover:underline"><a href="#">Azione</a></div>
+                                            <div class="px-4 py-2 hover:underline"><a href="#">Commedia</a></div>
+                                            <div class="px-4 py-2 hover:underline"><a href="#">Fantascienza</a></div>
+                                            <div class="px-4 py-2 hover:underline"><a href="#">Thriller</a></div>
+                                            <div class="px-4 py-2 underline"><a href="#">Scopri tutti ></a></div>
+                                        </div>
+                                        <div class="paesi w-[50%]">
+                                            <div class="px-4 py-2 font-bold">PAESI</div>
+                                            <div class="px-4 py-2 hover:underline"><a href="#">Francia</a></div>
+                                            <div class="px-4 py-2 hover:underline"><a href="#">Germania</a></div>
+                                            <div class="px-4 py-2 hover:underline"><a href="#">Italia</a></div>
+                                            <div class="px-4 py-2 hover:underline"><a href="#">Spagna</a></div>
+                                            <div class="px-4 py-2 hover:underline"><a href="#">Stati Uniti</a></div>
+                                            <div class="px-4 py-2 underline"><a href="#">Scopri tutti ></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#f2d14e]  text-white">About</a>
+                              </li>
+                              <li>
+                                <a href="#" class="block py-2 px-3  rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#f2d14e]  text-white">Services</a>
+                              </li>
+                              <li>
+                                <a href="#" class="block py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#f2d14e] text-white">Pricing</a>
+                              </li>
+                        </ul>
+                        
                     </div>
                 </div>
                 
@@ -353,6 +406,55 @@
 
     </script>
 
+<script>
+    document.getElementById("explore-btn").addEventListener("click", function () {
+        var menu = document.getElementById("explore-menu");
+        if (menu.classList.contains("hidden")) {
+            menu.classList.remove("hidden", "opacity-0");
+            menu.classList.add("opacity-100");
+        } else {
+            menu.classList.add("hidden", "opacity-0");
+            menu.classList.remove("opacity-100");
+        }
+    });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+// make it as accordion for smaller screens
+if (window.innerWidth < 992) {
+
+  // close all inner dropdowns when parent is closed
+  document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
+    everydropdown.addEventListener('hidden.bs.dropdown', function () {
+      // after dropdown is hidden, then find all submenus
+        this.querySelectorAll('.submenu').forEach(function(everysubmenu){
+          // hide every submenu as well
+          everysubmenu.style.display = 'none';
+        });
+    })
+  });
+
+  document.querySelectorAll('.dropdown-menu a').forEach(function(element){
+    element.addEventListener('click', function (e) {
+        let nextEl = this.nextElementSibling;
+        if(nextEl && nextEl.classList.contains('submenu')) {	
+          // prevent opening link if link needs to open dropdown
+          e.preventDefault();
+          if(nextEl.style.display == 'block'){
+            nextEl.style.display = 'none';
+          } else {
+            nextEl.style.display = 'block';
+          }
+
+        }
+    });
+  })
+}
+// end if innerWidth
+}); 
+// DOMContentLoaded  end
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
