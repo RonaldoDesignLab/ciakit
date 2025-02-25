@@ -24,70 +24,85 @@
         <header class="lg:block hidden w-full m-auto bg-black text-white p-2">
             <div class=" px-6 mx-auto lg:w-[1300px] w-full flex justify-between items-center">
                 <!-- Left Section -->
-                <div class="flex items-center space-x-12">
+                <div class="flex items-center space-x-12 ">
                     <!-- Logo -->
                     <a href="#" class="text-2xl font-bold">
                         <img src="https://ciakit.com/storage/channel/1/r1sXyFVuZFMUDis8VY0IqI89uca6jxZuqmaL4Dmx.png" class="w-[6rem]" alt="LOGO">
                     </a>
+                    <ul class="font-bold flex flex-col items-center p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+                        <li>
+                            <!-- Esplora Dropdown (On Hover) -->
+                            <div class="relative group">
+                                <button class="py-2 flex flex-row items-center center hover:underline rounded cursor-pointer font-bold">
+                                    Esplora 
+                                    <svg class="w-2.5 h-2.5 ms-3 mt-[2px] ml-[05px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                                    </svg>
+                                </button>
+                                <div class="absolute left-0 hidden group-hover:block bg-[rgb(248,250,252)] w-fit text-black mt-0 rounded shadow-lg transition-opacity duration-200 cursor-pointer opacity-0 group-hover:opacity-100">
+                                    <div class="generi-wrap flex flex-row  w-[100%] p-4 whitespace-nowrap">
+                                        <div class="generi ">
+                                            <div class="px-4 py-2">
+                                                <span class="font-bold">GENERI</span>
+                                            </div>
+                                            <div class="px-4 py-2 hover:underline">
+                                                <a href="#">Animazione</a>
+                                            </div>
+                                            <div class="px-4 py-2 hover:underline">
+                                                <a href="#">Azione</a>
+                                            </div>
+                                            <div class="px-4 py-2 hover:underline">
+                                                <a href="#">Commedia</a>
+                                            </div>
+                                            <div class="px-4 py-2 hover:underline">
+                                                <a href="#">Fantascienza</a>
+                                            </div>
+                                            <div class="px-4 py-2 hover:underline">
+                                                <a href="#">Thriller</a>
+                                            </div>
+                                            <div class="px-4 py-2 underline">
+                                                <a href="#">Scopri tutti ></a>
+                                            </div>
+                                        </div>
+                                        <div class="paesi">
+                                            <div class="px-4 py-2">
+                                                <span class="font-bold">PAESI</span>
+                                            </div>
+                                            <div class="px-4 py-2 hover:underline">
+                                                <a href="#">Francia</a>
+                                            </div>
+                                            <div class="px-4 py-2 hover:underline">
+                                                <a href="#">Germania</a>
+                                            </div>
+                                            <div class="px-4 py-2 hover:underline">
+                                                <a href="#">Italia</a>
+                                            </div>
+                                            <div class="px-4 py-2 hover:underline">
+                                                <a href="#">Spagna</a>
+                                            </div>
+                                            <div class="px-4 py-2 hover:underline">
+                                                <a href="#">Stati Uniti</a>
+                                            </div>
+                                            <div class="px-4 py-2 underline">
+                                                <a href="#">Scopri tutti ></a>
+                                            </div>   
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>                        
+                        </li>
+                        <li>
+                          <a href="#" class="block py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#f2d14e] md:p-0 text-white">About</a>
+                        </li>
+                        <li>
+                          <a href="#" class="block py-2 px-3  rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#f2d14e] md:p-0 text-white">Services</a>
+                        </li>
+                        <li>
+                          <a href="#" class="block py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#f2d14e] text-white">Pricing</a>
+                        </li>
+                      </ul>
                     
-                    <!-- Esplora Dropdown (On Hover) -->
-                    <div class="relative group">
-                        <button class="py-2 px-4 flex flex-row items-center center hover:underline rounded cursor-pointer font-bold">
-                            Esplora 
-                            <svg class="w-2.5 h-2.5 ms-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                            </svg>
-                        </button>
-                        <div class="absolute left-0 hidden group-hover:block bg-[rgb(248,250,252)] w-fit text-black mt-0 rounded shadow-lg transition-opacity duration-200 cursor-pointer opacity-0 group-hover:opacity-100">
-                            <div class="generi-wrap flex flex-row  w-[100%] p-4 whitespace-nowrap">
-                                <div class="generi ">
-                                    <div class="px-4 py-2">
-                                        <span class="font-bold">GENERI</span>
-                                    </div>
-                                    <div class="px-4 py-2 hover:underline">
-                                        <a href="#">Animazione</a>
-                                    </div>
-                                    <div class="px-4 py-2 hover:underline">
-                                        <a href="#">Azione</a>
-                                    </div>
-                                    <div class="px-4 py-2 hover:underline">
-                                        <a href="#">Commedia</a>
-                                    </div>
-                                    <div class="px-4 py-2 hover:underline">
-                                        <a href="#">Fantascienza</a>
-                                    </div>
-                                    <div class="px-4 py-2 hover:underline">
-                                        <a href="#">Thriller</a>
-                                    </div>
-                                    <div class="px-4 py-2 underline">
-                                        <a href="#">Scopri tutti ></a>
-                                    </div>
-                                </div>
-                                <div class="paesi">
-                                    <div class="px-4 py-2">
-                                        <span class="font-bold">PAESI</span>
-                                    </div>
-                                    <div class="px-4 py-2 hover:underline">
-                                        <a href="#">Francia</a>
-                                    </div>
-                                    <div class="px-4 py-2 hover:underline">
-                                        <a href="#">Germania</a>
-                                    </div>
-                                    <div class="px-4 py-2 hover:underline">
-                                        <a href="#">Italia</a>
-                                    </div>
-                                    <div class="px-4 py-2 hover:underline">
-                                        <a href="#">Spagna</a>
-                                    </div>
-                                    <div class="px-4 py-2 hover:underline">
-                                        <a href="#">Stati Uniti</a>
-                                    </div>
-                                    <div class="px-4 py-2 underline">
-                                        <a href="#">Scopri tutti ></a>
-                                    </div>   
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
         
                 <!-- Right Section -->
