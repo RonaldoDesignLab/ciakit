@@ -66,7 +66,7 @@
     </button>
 
     <!-- Sidebar -->
-    <div id="sidebar" class="fixed leading-6 left-[30%] top-0 w-[30%] h-screen bg-black text-white shadow-lg transition-all duration-300">
+    <div id="sidebar" class="fixed leading-6 left-[-30%] top-0 w-[30%] h-screen bg-black text-white shadow-lg transition-all duration-300">
         <button id="closeBtn" class="absolute top-2 right-2 bg-white text-black py-[8px] px-[14px] rounded-full">
             <i class="fa fa-times"></i>       
         </button>
@@ -92,7 +92,7 @@
 
                         </div>
                 
-                        <!-- Content Sections (Initially Hidden) -->
+                        <!-- INFO Sections (Initially Hidden) -->
                         <div class="hidden content-section" id="info-uk">
                             <button class="back-btn text-white" data-target="buttons-uk"><i class="fa fa-arrow-left"></i> Back</button>
                             <div class="px-6 m-0 text-center information">
@@ -139,7 +139,8 @@
                             </div>
                             
                         </div>
-                
+
+                        <!-- Rights Sections (Initially Hidden) -->
                         <div class="hidden content-section rights " id="rights-uk">
                             <button class="back-btn text-white" data-target="buttons-uk"><i class="fa fa-arrow-left"></i> Back</button>
                             <div class="max-w-3xl mx-auto p-6 rounded-lg shadow-lg">
@@ -230,6 +231,7 @@
                             </div>
                         </div>
 
+                        <!-- ID Sections (Initially Hidden) -->
                         <div class="hidden content-section" id="id-uk">
                             <button class="back-btn text-white" data-target="buttons-uk"><i class="fa fa-arrow-left"></i> Back</button>
                             <div class="mt-4 text-justify max-w-3xl mx-auto p-6 rounded-lg shadow-lg">
@@ -240,6 +242,7 @@
                             </div>
                         </div>
                 
+                        <!-- Privacy Policy Sections (Initially Hidden) -->
                         <div class="hidden content-section" id="policy-uk">
                             <button class="back-btn text-left text-white" data-target="buttons-uk"><i class="fa fa-arrow-left"></i> Back</button>
                             <div class="max-w-3xl mx-auto p-6 rounded-lg shadow-lg">
@@ -576,13 +579,281 @@
                             </div>
                         </div>
                         
+                        <!-- Cookies Sections (Initially Hidden) -->
                         <div class="hidden content-section" id="cookie-uk">
                             <button class="back-btn text-white" data-target="buttons-uk"><i class="fa fa-arrow-left"></i> Back</button>
-                            <p class="mt-4">This is the **COOKIE** content.</p>
+                            <div class="cookie_section">
+                                <div class="flex flex-row gap-2 mt-6 mb-3 justify-start items-center acconsento-click-w-full acconsento-click-flex acconsento-click-text-left acconsento-click-my-2">
+                                    <svg class="acconsento-icon-big-svg w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"></path></svg>
+                                    <div class="acconsento text-[22px]">Cookie Manager</div>
+                                </div>
+                                <p>
+                                    Manage the download of cookies
+                                </p>
+                                
+                                <div class="togglebutton_selection mt-6">
+                                    <div class="left flex flex-row justify-start ">
+                                        <label class="inline-flex items-center cursor-pointer w-1/2">
+                                            <input type="checkbox" value="" class="sr-only peer " checked disabled>
+                                            <div class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
+                                            <span class="ms-3  font-medium text-gray-900 dark:text-gray-300 ">Necessary</span>
+                                        </label>
+                                        <label class="inline-flex items-center cursor-pointer w-1/2">
+                                            <input type="checkbox" value="" class="sr-only peer" checked>
+                                            <div class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
+                                            <span class="ms-3  font-medium text-gray-900 dark:text-gray-300">Tracking</span>
+                                        </label>
+                                    </div>
+                                    <div class="right flex flex-row justify-start mt-3">
+                                        <label class="inline-flex items-center cursor-pointer w-1/2">
+                                            <input type="checkbox" value="" class="sr-only peer" checked>
+                                            <div class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
+                                            <span class="ms-3 font-medium text-gray-900 dark:text-gray-300">Marketing</span>
+                                        </label>
+                                        <label class="inline-flex items-center cursor-pointer w-1/2">
+                                            <input type="checkbox" value="" class="sr-only peer" checked>
+                                            <div class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
+                                            <span class="ms-3  font-medium text-gray-900 dark:text-gray-300">Propietary</span>
+                                        </label>
+                                    </div> 
+                                </div>
+
+                                <div class="flex flex-row gap-2 mt-6 mb-3 justify-start items-center acconsento-click-w-full acconsento-click-flex acconsento-click-text-left acconsento-click-my-2">
+                                    <svg class="acconsento-icon-big-svg w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"></path></svg>
+                                    <div class="acconsento text-[22px]">Cookies control center</div>
+                                </div>
+                                <div class="bg-white rounded-[11px] mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(20)">
+                                        What are cookies?
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-20" class="hidden tab-content-data rounded-[11px]  p-4 bg-white text-gray-700">
+                                        Cookies are small text files that websites visited by the users send to their terminals (usually to their browser), where they get stored to be transmitted again later to the same websites, whenever the user visits the site again through the same terminal.
+                                    </p>
+                                </div>
+                                <div class="flex flex-row gap-2 mt-6 mb-3 justify-start items-center acconsento-click-w-full acconsento-click-flex acconsento-click-text-left acconsento-click-my-2">
+                                    <svg class="acconsento-icon-big-svg w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"></path></svg>
+                                    <div class="acconsento text-[22px]">Which types of cookies do exist?</div>
+                                </div>
+
+                                <div class="bg-white rounded-[11px] mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(21)">
+                                        Session cookies
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-21" class="hidden tab-content-data rounded-[11px]  p-4 bg-white text-gray-700">
+                                        Which types of cookies do exist? It is the most common one and its duration is limited: it is activated when the user gets into a website and gets cancelled when the users leaves the site. Its goal is to recognize the user browsing between pages of the site, in order to make the system know the browsing it's about the same user. Theese cookies do not trigger any privacy problems of the user, because they get cancelled once the user leaves the website or closes the browser window; for their usage it's not necessary the user consent.
+                                    </p>
+                                </div>
+
+                                <div class="bg-white rounded-[11px] mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(22)">
+                                        Tracking cookies
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-22" class="hidden tab-content-data rounded-[11px]  p-4 bg-white text-gray-700">
+                                        It's a cookie that is cancelled from the used device by yhe user only after a certain period of time, that can lasts also years. Until it is active, it gets recognized by the system and it's possible to know that the browsing user it's again on the site previously visited. This way, it's possible customize the page, for example with a Welcome Message, or displaying spot advertising that recall to the same products previously seen, to entice the user buying.
+                                    </p>
+                                </div>
+
+                                <div class="bg-white rounded-[11px] mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(23)">
+                                        Original cookies
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-23" class="hidden tab-content-data rounded-[11px]  p-4 bg-white text-gray-700">
+                                        Original Cookie arecalled also first party cookie, and they are the cookie that are sent to the browser directly from the site we are visiting. They can be session or tracking cookies and they are handled directly from the manager of the website;                                    
+                                    </p>
+                                </div>
+
+                                <div class="bg-white rounded-[11px] mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(24)">
+                                        Third party cookies
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-24" class="hidden tab-content-data rounded-[11px]  p-4 bg-white text-gray-700">
+                                        They are generated and managed by subject that are not the manager of the website into the user is browsing (usually there's a deal between the data-controller and the third party). They can manage data in order of marketing or profilation, anyway they need the browing user consent. Every website can allow the transmission of "third party" cookie, that is to say the ones generated by websites different from the one the user is visiting (through existent objects on it as banner, images, maps, sounds, specific link quello che l'utente sta visitando (attraverso oggetti in esso presenti quali banner, immagini, mappe, to web pages of other domains).
+                                    </p>
+                                </div>
+
+                                <div class="bg-white rounded-[11px] mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(25)">
+                                        Technical cookies
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-25" class="hidden tab-content-data rounded-[11px]  p-4 bg-white text-gray-700">
+                                        They are the necessary cookie for the correct browsing of a site, and basically match with the session cookie we have previously talked about.
+                                    </p>
+                                </div>
+
+                                <div class="bg-white rounded-[11px] mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(25)">
+                                        Profilation cookies
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-25" class="hidden tab-content-data rounded-[11px]  p-4 bg-white text-gray-700">
+                                        They have got the aim to store the browse performed by the user on various internet sites. This way it is possible to determine a user profile, its tastes and habits in order to offer it ads in line with its preferences; they always need th user consent.
+                                    </p>
+                                </div>
+
+                                <div class="flex flex-row gap-2 mt-6 mb-3 justify-start items-center acconsento-click-w-full acconsento-click-flex acconsento-click-text-left acconsento-click-my-2">
+                                    <svg class="acconsento-icon-big-svg w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"></path></svg>
+                                    <div class="acconsento text-[22px]">Legal Bases</div>
+                                </div>
+                                <div class="bg-white rounded-[11px] mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(26)">
+                                        What does GDPR say?
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <p id="content-26" class="hidden tab-content-data rounded-[11px]  p-4 bg-white text-gray-700">
+                                        Recital 32 of the GDPR provides that: Consent should be given by a clear affirmative act establishing a freely given, specific, informed and unambiguous indication of the data subject’s agreement to the processing of personal data relating to him or her, such as by a written statement, including by electronic means, or an oral statement. So, before the data treatment start, the user must give a consent that would be unambiguous, freely given, voluntary, specific and informed. The consent can be given in many ways, since the Cookie Law doesn't take a stand on it, but it needs to be certain consequence of a voluntary choice. This must be an active behaviour, as clarified by the ruling of the European Court of Justice (Case C-673/17). So, the user's behavior, can not consist in a simple scrolling pages and clicking a link to another page, but it must be unambigously directed to the acceptance of cookies. The user needs to click on a button Agree or Refuse.
+                                    </p>
+                                </div>
+
+                                <div class="flex flex-row gap-2 mt-6 mb-3 justify-start items-center acconsento-click-w-full acconsento-click-flex acconsento-click-text-left acconsento-click-my-2">
+                                    <svg class="acconsento-icon-big-svg w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"></path></svg>
+                                    <div class="acconsento text-[22px]">Present Cookies</div>
+                                </div>
+                                <div class="bg-white rounded-[11px] mb-4">
+                                    <button class="w-full accordion-title flex flex-row justify-between text-left font-medium text-blue-600" onclick="toggleAccordion(27)">
+                                        ciakit.com
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg>
+                                    </button>
+                                    <div id="content-27" class="hidden tab-content-data rounded-[11px]  p-4 bg-white text-gray-700">
+                                        <ul>
+                                            <li class="relative my-2">
+                                              <div class="shadow-lg p-4 rounded-lg">
+                                                <div class="flex items-center space-x-4">
+                                                  <svg class="w-6 h-6 text-current absolute left-[-10px] top-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                    <path fill="currentColor" d="M494.6 255.9c-65.63-.8203-118.6-54.14-118.6-119.9c-65.74 0-119.1-52.97-119.8-118.6c-25.66-3.867-51.8 .2346-74.77 12.07L116.7 62.41C93.35 74.36 74.36 93.35 62.41 116.7L29.6 181.2c-11.95 23.44-16.17 49.92-12.07 75.94l11.37 71.48c4.102 25.9 16.29 49.8 34.81 68.32l51.36 51.39C133.6 466.9 157.3 479 183.2 483.1l71.84 11.37c25.9 4.101 52.27-.1172 75.59-11.95l64.81-33.05c23.32-11.84 42.31-30.82 54.14-54.14l32.93-64.57C494.3 307.7 498.5 281.4 494.6 255.9zM176 367.1c-17.62 0-32-14.37-32-31.1s14.38-31.1 32-31.1s32 14.37 32 31.1S193.6 367.1 176 367.1zM208 208c-17.62 0-32-14.37-32-31.1s14.38-31.1 32-31.1s32 14.37 32 31.1S225.6 208 208 208zM368 335.1c-17.62 0-32-14.37-32-31.1s14.38-31.1 32-31.1s32 14.37 32 31.1S385.6 335.1 368 335.1z"></path>
+                                                  </svg>
+                                                  <div>
+                                                    <span class="text-lg font-bold">XSRF-TOKEN</span><br>
+                                                    <span class="text-sm text-[#409eff] bg-[#409eff1c] px-[10px] rounded">Security</span><br><br>
+                                                    <span class="text-sm">This cookie is written to help with site security in preventing Cross-Site Request Forgery attacks.</span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </li>
+                                          
+                                            <li class="relative my-2">
+                                              <div class="shadow-lg p-4 rounded-lg">
+                                                <div class="flex items-center space-x-4">
+                                                  <svg class="w-6 h-6 absolute left-[-10px] top-0 text-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                    <path fill="currentColor" d="M494.6 255.9c-65.63-.8203-118.6-54.14-118.6-119.9c-65.74 0-119.1-52.97-119.8-118.6c-25.66-3.867-51.8 .2346-74.77 12.07L116.7 62.41C93.35 74.36 74.36 93.35 62.41 116.7L29.6 181.2c-11.95 23.44-16.17 49.92-12.07 75.94l11.37 71.48c4.102 25.9 16.29 49.8 34.81 68.32l51.36 51.39C133.6 466.9 157.3 479 183.2 483.1l71.84 11.37c25.9 4.101 52.27-.1172 75.59-11.95l64.81-33.05c23.32-11.84 42.31-30.82 54.14-54.14l32.93-64.57C494.3 307.7 498.5 281.4 494.6 255.9zM176 367.1c-17.62 0-32-14.37-32-31.1s14.38-31.1 32-31.1s32 14.37 32 31.1S193.6 367.1 176 367.1zM208 208c-17.62 0-32-14.37-32-31.1s14.38-31.1 32-31.1s32 14.37 32 31.1S225.6 208 208 208zM368 335.1c-17.62 0-32-14.37-32-31.1s14.38-31.1 32-31.1s32 14.37 32 31.1S385.6 335.1 368 335.1z"></path>
+                                                  </svg>
+                                                  <div>
+                                                    <span class="text-lg font-bold">ciakit_session</span><br>
+                                                    <span class="text-sm text-[#409eff] bg-[#409eff1c] px-[10px] rounded">First party</span><br><br>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                
+                                <div class="butt-privacy text-center">
+                                    <button id="show-popups" class="cursor-pointer mt-6 hover:bg-[#efc622] font-bold uppercase rounded-xl text- py-[8px] px-[20px] bg-[#efc622]">
+                                        Show cookie policy
+                                    </button>
+                                </div>
+                                <div class="popup-overlays flex flex-col fixed inset-0 bg-black/9 bg-opacity-50 hidden justify-center items-center z-50" id="popup-overlays">
+                                    <div class="popup-container p-6  h-dvh bg-white max-w-[820px] h-4/5 rounded-lg relative overflow-hidden">
+                                        <button class="close-btn absolute top-2 right-[20px] text-3xl text-gray-700 hover:text-gray-900" id="close-popups">&times;</button>
+                                        <div class="popup-contents  max-h-full overflow-y-auto p-6">
+                                            <div id="acconsento-click-pdf" class="acconsento-click-text-sm text-black"><h2 class="ql-align-justify"><strong>Cookie Policy from www.ciakit.com</strong></h2><p class="ql-align-justify">Cookies are a piece of data sent from a website and stored in your browser's memory. Cookies may be required to enable a website to function properly as websites are stateless (do not remember user information from one page to another) but are sometimes used to track user actions within a website or across multiple websites in order to gather usage information or identify interests and map behavior to deliver relevant advertisements. When websites use the Acconsento.click consent management platform, they offer you the ability to allow or deny certain categories of cookies that help protect your privacy. Below is a description of the most common cookie categories.</p><br><h2 class="ql-align-justify"><strong>Necessary cookies</strong></h2><p class="ql-align-justify">Necessary cookies are used to make a website work properly, generally not used for tracking and not shared across websites. The most common action performed using a cookie is user authentication. When you access any website, a cookie is stored in your browser that includes some data used by the web to remember who is authenticated when you go to another internal page or refresh the site. Cookies are also used so that a website knows what's in your cart, load balancing information, and more.</p><br><h2 class="ql-align-justify"><strong>Preferences cookies</strong></h2><p class="ql-align-justify">Preference cookies allow the website to remember information to personalize the appearance or behavior of the website for each user. This may include storing selected currency, region, language, or color theme.</p><br><h2 class="ql-align-justify"><strong>Analytical cookies</strong></h2><p class="ql-align-justify">Analytical cookies are not necessary but are used to gather valuable information on how a website is used, identify issues, and understand what needs improvement on the site and what content is helpful. The collected information is mostly anonymous, but some analytics services collect information that can be used to identify the user.</p><br><h2 class="ql-align-justify"><strong>Marketing cookies</strong></h2><p class="ql-align-justify">Marketing cookies are used to track visitors across websites to enable publishers to display relevant and engaging advertisements. This site uses various types of cookies and you can change or withdraw your consent at any time.</p><p class="ql-align-justify" style="margin-top:28px!important">The law states that we can store cookies on your device if they are strictly necessary for the operation of this website. For all other types of cookies we need your explicit consent. This means that cookies classified as necessary are processed under Article 6(1)(f) "Lawfulness of processing" of the GDPR. All other cookies, namely those belonging to preference and marketing categories, will only be activated upon your explicit consent.<br>This site uses different types of cookies. Some cookies may be related to third-party services that appear on our pages.<br>You can change or withdraw your consent at any time through the Cookie Management &gt; Cookie Manager section, available within the privacy control center always accessible during browsing via the "privacy lock".<br>Within the control center, you can also get more information on how we process your personal data by consulting our Privacy Policy through the Privacy Information &gt; Show information section.<br>Specify your consent ID and the date when you contacted us regarding your consent.</p></div>
+                                            <div class="flex flex-row gap-4 text-black mt-4">
+                                                <div class="left-list-section flex-col flex  gap-4 w-1/2">
+                                                    <ul>
+                                                        <li class="relative my-2">
+                                                        <div class="shadow-lg p-4 rounded-lg">
+                                                            <div class="flex items-center space-x-4">
+                                                            <svg class="w-6 h-6 text-current absolute left-[-10px] top-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                                <path fill="currentColor" d="M494.6 255.9c-65.63-.8203-118.6-54.14-118.6-119.9c-65.74 0-119.1-52.97-119.8-118.6c-25.66-3.867-51.8 .2346-74.77 12.07L116.7 62.41C93.35 74.36 74.36 93.35 62.41 116.7L29.6 181.2c-11.95 23.44-16.17 49.92-12.07 75.94l11.37 71.48c4.102 25.9 16.29 49.8 34.81 68.32l51.36 51.39C133.6 466.9 157.3 479 183.2 483.1l71.84 11.37c25.9 4.101 52.27-.1172 75.59-11.95l64.81-33.05c23.32-11.84 42.31-30.82 54.14-54.14l32.93-64.57C494.3 307.7 498.5 281.4 494.6 255.9zM176 367.1c-17.62 0-32-14.37-32-31.1s14.38-31.1 32-31.1s32 14.37 32 31.1S193.6 367.1 176 367.1zM208 208c-17.62 0-32-14.37-32-31.1s14.38-31.1 32-31.1s32 14.37 32 31.1S225.6 208 208 208zM368 335.1c-17.62 0-32-14.37-32-31.1s14.38-31.1 32-31.1s32 14.37 32 31.1S385.6 335.1 368 335.1z"></path>
+                                                            </svg>
+                                                            <div>
+                                                                <span class="text-lg font-bold">XSRF-TOKEN</span><br>
+                                                                <span class="text-sm text-[#409eff] bg-[#409eff1c] px-[10px] rounded">Security</span><br>
+                                                                <span class="text-sm">This cookie is written to help with site security in preventing Cross-Site Request Forgery attacks.</span>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                        </li>
+                                                    
+                                                        <li class="relative my-2">
+                                                        <div class="shadow-lg p-4 rounded-lg">
+                                                            <div class="flex items-center space-x-4">
+                                                            <svg class="w-6 h-6 absolute left-[-10px] top-0 text-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                                <path fill="currentColor" d="M494.6 255.9c-65.63-.8203-118.6-54.14-118.6-119.9c-65.74 0-119.1-52.97-119.8-118.6c-25.66-3.867-51.8 .2346-74.77 12.07L116.7 62.41C93.35 74.36 74.36 93.35 62.41 116.7L29.6 181.2c-11.95 23.44-16.17 49.92-12.07 75.94l11.37 71.48c4.102 25.9 16.29 49.8 34.81 68.32l51.36 51.39C133.6 466.9 157.3 479 183.2 483.1l71.84 11.37c25.9 4.101 52.27-.1172 75.59-11.95l64.81-33.05c23.32-11.84 42.31-30.82 54.14-54.14l32.93-64.57C494.3 307.7 498.5 281.4 494.6 255.9zM176 367.1c-17.62 0-32-14.37-32-31.1s14.38-31.1 32-31.1s32 14.37 32 31.1S193.6 367.1 176 367.1zM208 208c-17.62 0-32-14.37-32-31.1s14.38-31.1 32-31.1s32 14.37 32 31.1S225.6 208 208 208zM368 335.1c-17.62 0-32-14.37-32-31.1s14.38-31.1 32-31.1s32 14.37 32 31.1S385.6 335.1 368 335.1z"></path>
+                                                            </svg>
+                                                            <div>
+                                                                <span class="text-lg font-bold">_ga_7VJ26RCW99</span><br>
+                                                                <span class="text-sm text-[#409eff] bg-[#409eff1c] px-[10px] rounded">Performance</span><br>
+                                                                <span class="text-sm">Used by Google Analytics to identify and track an individual session with your device.</span>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                        </li>
+
+                                                    
+                                                        <li class="relative my-2">
+                                                            <div class="shadow-lg p-4 rounded-lg">
+                                                                <div class="flex items-center space-x-4">
+                                                                <svg class="w-6 h-6 absolute left-[-10px] top-0 text-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                                    <path fill="currentColor" d="M494.6 255.9c-65.63-.8203-118.6-54.14-118.6-119.9c-65.74 0-119.1-52.97-119.8-118.6c-25.66-3.867-51.8 .2346-74.77 12.07L116.7 62.41C93.35 74.36 74.36 93.35 62.41 116.7L29.6 181.2c-11.95 23.44-16.17 49.92-12.07 75.94l11.37 71.48c4.102 25.9 16.29 49.8 34.81 68.32l51.36 51.39C133.6 466.9 157.3 479 183.2 483.1l71.84 11.37c25.9 4.101 52.27-.1172 75.59-11.95l64.81-33.05c23.32-11.84 42.31-30.82 54.14-54.14l32.93-64.57C494.3 307.7 498.5 281.4 494.6 255.9zM176 367.1c-17.62 0-32-14.37-32-31.1s14.38-31.1 32-31.1s32 14.37 32 31.1S193.6 367.1 176 367.1zM208 208c-17.62 0-32-14.37-32-31.1s14.38-31.1 32-31.1s32 14.37 32 31.1S225.6 208 208 208zM368 335.1c-17.62 0-32-14.37-32-31.1s14.38-31.1 32-31.1s32 14.37 32 31.1S385.6 335.1 368 335.1z"></path>
+                                                                </svg>
+                                                                <div>
+                                                                    <span class="text-lg font-bold">ciakit_session</span><br>
+                                                                    <span class="text-sm text-[#409eff] bg-[#409eff1c] px-[10px] rounded">Unknown</span><br>
+                                                                    <span class="text-sm">Unknown</span>
+                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                            </li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="right-list-section gap-4 w-1/2 flex-col flex">
+                                                    <ul>
+                                                        <li class="relative my-2">
+                                                        <div class="shadow-lg p-4 rounded-lg">
+                                                            <div class="flex items-center space-x-4">
+                                                            <svg class="w-6 h-6 text-current absolute left-[-10px] top-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                                <path fill="currentColor" d="M494.6 255.9c-65.63-.8203-118.6-54.14-118.6-119.9c-65.74 0-119.1-52.97-119.8-118.6c-25.66-3.867-51.8 .2346-74.77 12.07L116.7 62.41C93.35 74.36 74.36 93.35 62.41 116.7L29.6 181.2c-11.95 23.44-16.17 49.92-12.07 75.94l11.37 71.48c4.102 25.9 16.29 49.8 34.81 68.32l51.36 51.39C133.6 466.9 157.3 479 183.2 483.1l71.84 11.37c25.9 4.101 52.27-.1172 75.59-11.95l64.81-33.05c23.32-11.84 42.31-30.82 54.14-54.14l32.93-64.57C494.3 307.7 498.5 281.4 494.6 255.9zM176 367.1c-17.62 0-32-14.37-32-31.1s14.38-31.1 32-31.1s32 14.37 32 31.1S193.6 367.1 176 367.1zM208 208c-17.62 0-32-14.37-32-31.1s14.38-31.1 32-31.1s32 14.37 32 31.1S225.6 208 208 208zM368 335.1c-17.62 0-32-14.37-32-31.1s14.38-31.1 32-31.1s32 14.37 32 31.1S385.6 335.1 368 335.1z"></path>
+                                                            </svg>
+                                                            <div>
+                                                                <span class="text-lg font-bold">_ga</span><br>
+                                                                <span class="text-sm text-[#409eff] bg-[#409eff1c] px-[10px] rounded">Performance</span><br>
+                                                                <span class="text-sm">This cookie name is associated with Google Universal Analytics - which is a significant update to Google's more commonly used analytics service. This cookie is used to distinguish unique users by assigning a randomly generated number as a client identifier. It is included in each page request in a site and used to calculate visitor, session and campaign data for the sites analytics reports. By default it is set to expire after 2 years, although this is customisable by website owners.</span>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                        </li>
+                                                    </ul>
+                                                    
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="print-button absolute left-[20px] bottom-[20px] w-full text-center">
+                                                <a class="acconsento-click-absolute acconsento-click-bottom-1 acconsento-click-left-2" href="undefine/itd" target="_blank">
+                                                    <svg class="w-7 h-7 acconsento-click-cursor-pointer acconsento-click-m-auto acconsento-click-w-8 acconsento-click-h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="black" d="M448 192H64C28.65 192 0 220.7 0 256v96c0 17.67 14.33 32 32 32h32v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h32c17.67 0 32-14.33 32-32V256C512 220.7 483.3 192 448 192zM384 448H128v-96h256V448zM432 296c-13.25 0-24-10.75-24-24c0-13.27 10.75-24 24-24s24 10.73 24 24C456 285.3 445.3 296 432 296zM128 64h229.5L384 90.51V160h64V77.25c0-8.484-3.375-16.62-9.375-22.62l-45.25-45.25C387.4 3.375 379.2 0 370.8 0H96C78.34 0 64 14.33 64 32v128h64V64z"></path></svg>
+                                                </a>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
                 
+
+                
+            <!-----ITALIAN SECTION--->
                 <div class="tab-content mt-4 p-6 pt-4 hidden" id="tab-it"> 
                     <div class="title-content">
                         <h3 class="text-2xl uppercase text-center bg-[#efc622] p-2">Centro Di Controllo Privacy</h3>
@@ -641,6 +912,26 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        // Show popup when button is clicked
+        document.getElementById('show-popups').addEventListener('click', function() {
+            document.getElementById('popup-overlays').classList.remove('hidden');
+        });
+
+        // Close popup when the cross button is clicked
+        document.getElementById('close-popups').addEventListener('click', function() {
+            document.getElementById('popup-overlays').classList.add('hidden');
+        });
+
+        // Close popup when clicking outside the popup container
+        document.getElementById('popup-overlays').addEventListener('click', function(e) {
+            if (e.target === document.getElementById('popup-overlays')) {
+                document.getElementById('popup-overlays').classList.add('hidden');
+            }
+        });
+
+    </script>
     <script>
         // Show popup when button is clicked
         document.getElementById('show-popup').addEventListener('click', function() {
