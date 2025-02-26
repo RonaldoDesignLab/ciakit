@@ -160,18 +160,27 @@
                 <!-- Right Section -->
                 <div class="flex items-center w-[450px]">
                     <!-- Search Box -->
-                    <form method="GET" role="search" id="searchmaster-form" action="https://ciakit.com/masters" class="w-full">
-                        <div role="toolbar" class="flex items-center bg-black rounded-[260px] p-2 "><!-- Search Input -->
-                            <div class="flex-1 mr-0">
-                                <input required="required" name="term" type="search" placeholder="Cerca il titolo di un film" aria-label="Search" class="w-full leading-[28px] bg-white text-black rounded-l-full py-2 px-4 text-sm focus:outline-none focus:ring-2">
+                    <form method="GET" role="search" id="searchmaster-form" action="https://ciakit.com/masters" class="w-full px-4 relative">
+                        <div role="toolbar" class="flex items-center bg-black rounded-[260px] p-2">
+                            <!-- Search Input -->
+                            <div class="flex-1 mr-0 relative">
+                                <input required="required" name="term" type="search" id="search-input" 
+                                    placeholder="Cerca il titolo di un film" aria-label="Search"
+                                    class="w-full search-input leading-[28px] bg-white text-black rounded-l-full py-2 px-4 text-sm focus:outline-none focus:ring-2">
+                                <!-- Suggestion Box -->
+                                <ul id="suggestion-box" class="absolute left-0 w-full bg-white text-black border border-gray-300 shadow-md hidden rounded-md overflow-hidden z-10">
+                                    <!-- Suggestions will be injected here -->
+                                </ul>
                             </div>
-                    
+
                             <!-- Search Button -->
-                            <button type="submit" id="header-search-icon" aria-label="Search" class="bg-[#efc622] px-4 py-2  text-black rounded-r-full p-2 hover:bg-[#efc622] focus:outline-none h-[44px]">
+                            <button type="submit" id="header-search-icon" aria-label="Search" class="bg-[#efc622] px-4 py-2 text-black rounded-r-full p-2 hover:bg-[#efc622] focus:outline-none h-[44px]">
                                 <i class="fa fa-search"></i>
                             </button>
                         </div>
                     </form>
+
+
                     
         
                     <!-- User Icon/Name Dropdown (On Click) -->
@@ -341,14 +350,21 @@
                 </div>
             </div>
             <!-- Search Box -->
-            <form method="GET" role="search" id="searchmaster-form" action="https://ciakit.com/masters" class="w-full px-4">
-                <div role="toolbar" class="flex items-center bg-black rounded-[260px] p-2 "><!-- Search Input -->
-                    <div class="flex-1 mr-0">
-                        <input required="required" name="term" type="search" placeholder="Cerca il titolo di un film" aria-label="Search" class="w-full leading-[28px] bg-white text-black rounded-l-full py-2 px-4 text-sm focus:outline-none focus:ring-2">
+            <form method="GET" role="search" id="searchmaster-form" action="https://ciakit.com/masters" class="w-full px-4 relative">
+                <div role="toolbar" class="flex items-center bg-black rounded-[260px] p-2">
+                    <!-- Search Input -->
+                    <div class="flex-1 mr-0 relative">
+                        <input required="required" name="term" type="search" id="search-input" 
+                            placeholder="Cerca il titolo di un film" aria-label="Search"
+                            class="w-full search-input leading-[28px] bg-white text-black rounded-l-full py-2 px-4 text-sm focus:outline-none focus:ring-2">
+                        <!-- Suggestion Box -->
+                        <ul id="suggestion-box" class="absolute left-0 w-full bg-white text-black border border-gray-300 shadow-md hidden rounded-md overflow-hidden z-10">
+                            <!-- Suggestions will be injected here -->
+                        </ul>
                     </div>
-            
+
                     <!-- Search Button -->
-                    <button type="submit" id="header-search-icon" aria-label="Search" class="bg-[#efc622] px-4 py-2  text-black rounded-r-full p-2 hover:bg-[#efc622] focus:outline-none h-[44px]">
+                    <button type="submit" id="header-search-icon" aria-label="Search" class="bg-[#efc622] px-4 py-2 text-black rounded-r-full p-2 hover:bg-[#efc622] focus:outline-none h-[44px]">
                         <i class="fa fa-search"></i>
                     </button>
                 </div>
@@ -441,7 +457,47 @@
     </div> 
 
 
-
+    <script>
+        const suggestions = ["Inception", "Interstellar", "Iron Man", "Indiana Jones", "Inside Out", "Ice Age", "It"]; // Example suggestions
+    
+        document.querySelectorAll(".search-input").forEach((searchInput) => {
+            const suggestionBox = searchInput.nextElementSibling; // Get the related suggestion box
+    
+            searchInput.addEventListener("input", function() {
+                let query = searchInput.value.toLowerCase();
+                suggestionBox.innerHTML = "";
+                if (!query) {
+                    suggestionBox.classList.add("hidden");
+                    return;
+                }
+                
+                let matches = suggestions.filter(item => item.toLowerCase().includes(query));
+                
+                if (matches.length > 0) {
+                    suggestionBox.classList.remove("hidden");
+                    matches.forEach(match => {
+                        let li = document.createElement("li");
+                        li.textContent = match;
+                        li.className = "px-4 py-2 cursor-pointer hover:bg-gray-200";
+                        li.addEventListener("click", () => {
+                            searchInput.value = match;
+                            suggestionBox.classList.add("hidden");
+                        });
+                        suggestionBox.appendChild(li);
+                    });
+                } else {
+                    suggestionBox.classList.add("hidden");
+                }
+            });
+    
+            document.addEventListener("click", function(event) {
+                if (!searchInput.contains(event.target) && !suggestionBox.contains(event.target)) {
+                    suggestionBox.classList.add("hidden");
+                }
+            });
+        });
+    </script>
+    
     <script>
         document.addEventListener("DOMContentLoaded", function () {
     const menuButton = document.getElementById("mobile-menu-toggle");

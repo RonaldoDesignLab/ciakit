@@ -1933,6 +1933,9 @@
   .bg-blue-500 {
     background-color: var(--color-blue-500);
   }
+  .bg-blue-600 {
+    background-color: var(--color-blue-600);
+  }
   .bg-gray-100 {
     background-color: var(--color-gray-100);
   }
@@ -2247,6 +2250,9 @@
   .py-\[12px\] {
     padding-block: 12px;
   }
+  .py-\[15px\] {
+    padding-block: 15px;
+  }
   .py-\[35px\] {
     padding-block: 35px;
   }
@@ -2368,6 +2374,10 @@
   .text-3xl {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-6xl {
+    font-size: var(--text-6xl);
+    line-height: var(--tw-leading, var(--text-6xl--line-height));
   }
   .text-lg {
     font-size: var(--text-lg);
@@ -3184,6 +3194,13 @@
     &:hover {
       @media (hover: hover) {
         background-color: #f2d14e;
+      }
+    }
+  }
+  .hover\:bg-blue-700 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-blue-700);
       }
     }
   }
